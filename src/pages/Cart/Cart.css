@@ -1,0 +1,172 @@
+.main-cart-section {
+  flex-grow: 1;
+  margin-top: 5rem;
+}
+
+.cart-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--light-gray-color);
+  width: 100%;
+}
+
+.cartBtn {
+  min-width: max-content;
+  max-width: max-content;
+  color: var(--dark-blue-color);
+  outline: var(--dark-blue-color) solid 1px;
+  background: none;
+}
+
+/*------------------ Start Cart Product Stylings--------------------------- */
+
+.cart-product-section {
+  box-shadow: 0 0 4px 0px var(--dark-gray-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-product-section .cart-header {
+  margin: 1rem 1.2rem;
+}
+
+.product-conatiner {
+  margin: 1rem 1.2rem;
+}
+.cart-item {
+  gap: 2rem;
+}
+.cart-item .item-image {
+  width: 8rem;
+}
+
+.cart-item .item-details {
+  min-width: 19rem;
+}
+
+.cart-item .item-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.cart-item .item-subtitle {
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+}
+.cart-item .coupon-details {
+  color: var(--dark-blue-color);
+  margin-top: 1.2rem;
+}
+.cart-options {
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.cart-options .quantity {
+  min-width: 8rem;
+
+  gap: 0.5rem;
+}
+
+.cart-options .quantity-btn {
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  background: none;
+  border: 1px solid var(--dark-gray-color);
+  cursor: pointer;
+}
+
+.cart-options .qantity-value {
+  border: 1px solid var(--dark-gray-color);
+  width: 3rem;
+  padding: 3px 6px;
+  text-align: center;
+}
+
+.cart-options .cart-actions {
+  /* display: flex; */
+  gap: 2rem;
+}
+
+.cart-options .link-btn {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.cart-bottom {
+  margin: 1rem 1.2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-bottom .primary-btn-solid {
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+}
+
+/*------------------ End Cart Product Stylings--------------------------- */
+
+/*------------------ Start Cart Pricing Stylings------------------------  */
+
+.price-detail-section {
+  box-shadow: 0 0 4px 0px var(--dark-gray-color);
+  max-height: 20rem;
+}
+
+.price-detail-header {
+  margin: 1rem 1.2rem;
+}
+
+.price-detail-header .text-grey {
+  text-transform: uppercase;
+}
+
+.price-deatil-body {
+  margin: 1rem 1.2rem;
+}
+
+.price-deatil-body .price-div > * {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.items-discount .right-detai {
+  color: var(--red-color);
+}
+
+.price-deatil-body .total-price-div {
+  border-top: 1px dotted var(--dark-gray-color);
+  border-bottom: 1px dotted var(--dark-gray-color);
+}
+
+.price-deatil-body .total-price-div .total-amt {
+  margin: 1rem 0;
+
+  align-content: center;
+}
+
+.price-detail-footer {
+  gap: 10px;
+  margin: 1rem 1.2rem;
+}
+
+.price-detail-footer .footer-note {
+  color: var(--primary-color);
+}
+
+/*------------------ End Cart Pricing Stylings------------------------  */
+
+.empty-container {
+  margin: 1rem;
+}

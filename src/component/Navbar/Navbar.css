@@ -1,0 +1,118 @@
+.nav_container {
+  box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: #f7f7f7;
+  z-index: 999;
+  padding: 0.5rem 0;
+}
+.nav_desktop {
+  width: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+}
+.nav_left_logo {
+  /* display: flex; */
+  grid-gap: 1.25rem;
+  gap: 1.25rem;
+  /* align-items: center; */
+}
+.nav_logo small {
+  font-weight: 100%;
+}
+.logo_container {
+  max-width: 6rem;
+  /* display: flex;
+  align-items: center; */
+  padding-left: 0.5rem;
+}
+.nav_logo {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  font-weight: 600;
+}
+.navbar_logo {
+  width: 100%;
+}
+
+.nav_search {
+  width: 35rem;
+  position: relative;
+}
+.nav_search .icon_search {
+  position: absolute;
+  top: 31%;
+  right: 2%;
+}
+.search_bar {
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.4s ease;
+  background-color: var(--light-gray-color);
+  color: var(--black-color);
+  border: 1px solid var(--black-color);
+  width: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.btn_link {
+  padding: 0 0.5rem 0 0;
+}
+.nav_explore_link {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-right: 0.5rem;
+}
+.nav_explore_link .explore_btn {
+  padding: 0 0.5rem;
+  color: var(--dark-blue-color);
+}
+
+.btn_secondary {
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+
+  border: 0.125rem solid var(--dark-blue-color);
+  color: var(--dark-blue-color);
+}
+.btn_secondary a {
+  color: var(--dark-blue-color);
+}
+.btn_icon {
+  display: grid;
+}
+.btn_icon_propery {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.btn_icon_navlink {
+  padding: 0.75rem 0.75rem 0.75rem 0.25rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav_search {
+    width: 25rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nav_container {
+    padding: 0.5rem 0rem;
+    padding-top: 0.25rem;
+  }
+  .nav_search {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .nav_search {
+    width: 18rem;
+  }
+}

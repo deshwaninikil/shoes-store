@@ -1,0 +1,126 @@
+.auth_section {
+  margin: 8.5rem 0 2.5rem;
+  flex-grow: 1;
+}
+
+.auth_container {
+  gap: 2rem;
+  width: 24rem;
+  padding: 2rem;
+  box-shadow: 0 0 4px 0px var(--dark-gray-color);
+}
+
+.auth_title .heading {
+  margin: 0;
+  font-size: 25px;
+}
+.auth_form {
+  width: 100%;
+}
+
+.auth_body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.auth_body .auth_items.checkboxItem {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.auth_body .auth_items.signup_item {
+  display: inline-flex;
+  justify-content: center;
+}
+
+/* .auth_body .auth_items .btn {
+  width: 100%;
+  background-color: var(--dark-blue-color);
+  color: var(--bg-color-primary);
+} */
+.auth_body .auth_items .btn:hover,
+.auth_body .auth_items .btn:focus {
+  background-color: var(--light-blue-color);
+}
+.auth_body .auth_llnk {
+  color: var(--dark-blue-color);
+}
+.auth_body .auth_llnk:hover,
+.auth_body .auth_llnk:focus {
+  color: var(--light-blue-color);
+}
+
+.auth_items .input_txt {
+  border: 1px solid var(--dark-gray-color);
+}
+
+.auth_body .action_btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.auth_body .authError {
+  color: var(--red-color);
+}
+
+.passwordIcon {
+  position: absolute;
+  cursor: pointer;
+  right: 5px;
+  bottom: 10px;
+  margin-right: 5px;
+}
+
+.password_div {
+  position: relative;
+}
+.input_group {
+  width: 100%;
+}
+
+.input_label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+.input_txt {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.errInput {
+  border: 1px solid var(--red-color);
+}
+
+.errMsg {
+  color: var(--red-color);
+}
+.btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  background-color: var(--dark-blue-color);
+  color: var(--bg-color-primary);
+}
+.btn:hover,
+.btn:focus {
+  background-color: var(--light-blue-color);
+  color: var(--bg-color-primary);
+}
+@media screen and (max-width: 1000px) {
+  .auth_section {
+    /* margin: 8.5rem 0 2.5rem; */
+    padding: 1rem 2rem;
+  }
+}

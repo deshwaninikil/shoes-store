@@ -1,0 +1,58 @@
+.footer * :not(.fa-icon) {
+  font-family: "Poppins", sans-serif;
+}
+
+.footer {
+  gap: 8px;
+  margin-top: 0;
+  padding: 2.5rem 0;
+  background-color: var(--light-gray-color);
+}
+
+.footer-item {
+  gap: 10px;
+}
+
+.footer-item .footer-icons {
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.quick-links,
+.contact-details {
+  gap: 10px;
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.ml-0-5 {
+  margin-left: 0.5rem;
+}
+
+.fs-1-25 {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer-item .footer-icons {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .footer {
+    /* flex-direction: column;
+    text-align: center; */
+  }
+}
+
+@media screen and (max-width: 500px) {
+}

@@ -1,0 +1,147 @@
+.card {
+  width: 100%;
+  background-color: var(--white-color);
+  box-shadow: 0 0 9px 5px var(--light-gray-color);
+  transition: box-shadow 0.4s;
+}
+
+.card:hover {
+  box-shadow: 0 0 9px 1px var(--dark-gray-color);
+}
+
+.vertical-card {
+  max-width: 11rem;
+}
+
+.horizontal-card {
+  max-width: 16rem;
+}
+
+.ecomm-card {
+  max-width: 17rem;
+}
+
+.card-text-over-media {
+  position: relative;
+}
+
+.card-head {
+  position: relative;
+  padding: 0.7rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-body {
+  position: relative;
+  /* display: flex;
+  flex-direction: column; */
+  padding: 0.7rem;
+}
+
+.card-head .image-badge-div {
+  position: relative;
+}
+
+.card-head .image-badge-div .product-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-head .image-badge-div .new-badge {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  padding: 3px 5px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--black-color);
+}
+
+.like-icon,
+.close-icon {
+  position: absolute;
+  top: 1rem;
+  right: 7px;
+  font-size: 1.1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  opacity: 0.2;
+  transition: transform 0.2s ease;
+}
+
+.ecomm-card .like-icon {
+  top: 11px;
+}
+
+.like-icon:hover {
+  transform: scale(1.1);
+  color: var(--red-color);
+  opacity: 1;
+}
+
+.close-icon:hover {
+  opacity: 1;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90%;
+}
+
+.card-text {
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+}
+
+.card-price {
+  margin: 16px 0 8px;
+}
+
+.price-now {
+  font-weight: 700;
+}
+
+.price-before {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.discount {
+  color: var(--red-color);
+}
+
+/* .overlay-div {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(234, 234, 236, 0.6);
+}
+
+.overlay-div .overlay-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem;
+  width: 88%;
+  background: #e5e7eb;
+} */
+.liked {
+  color: var(--red-color);
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

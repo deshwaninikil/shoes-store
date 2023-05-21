@@ -1,51 +1,466 @@
-.App {
+/*-----------------------------------Start Common Css----------------------------------------*/
+
+body {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+:root {
+  --primary-color: #5cc7b2;
+  --light-primary-color: #ccfbf1;
+  --dark-primary-color: #14b8a6;
+  --secondary-color: #e5e5e5;
+  --action-color: #fdba74;
+  --dark-gray-color: #9ca3af;
+  --light-gray-color: #e5e7eb;
+  --black-color: #1f1f27;
+  --wood-color: burlywood;
+  --white-color: #fff;
+  --bg-color-primary: #fcfcfc;
+  --red-color: #dc2626;
+  --light-rose-color: #ffe4e6;
+  --yellow-color: #fbbf24;
+  --light-lime-color: #fefce8;
+  --bright-yellow-color: #fdd835;
+  --blue-color: #38bdf8;
+  /* --light-blue-color: #e0f2fe; */
+  --light-blue-color: #2057a8;
+  --dark-blue-color: blue;
+  --green-color: #4ade80;
+  --light-green-color: #dcfce7;
+  --font-1: 0.5rem;
+  --font-2: 0.75rem;
+  --font-3: 0.85rem;
+  --font-4: 1rem;
+  --font-5: 1.25rem;
+  --font-6: 1.5rem;
+  --font-7: 1.75rem;
+  --font-8: 2rem;
+}
+
+a:focus,
+a:focus {
+  outline: none;
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+
+a:hover,
+a:focus {
+  outline: none;
+}
+
+hr {
+  width: 100%;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000;
+}
+
+h2 span {
+  font-weight: normal;
+}
+
+p {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overflowhide {
+  overflow: hidden;
+}
+.pl-0-5 {
+  padding-left: 0.5rem;
+}
+
+.pdngtb5 {
+  padding: 5rem 0;
+}
+
+.pdngtb4 {
+  padding: 4rem 0;
+}
+
+.pdngtb2 {
+  padding: 2rem 0 0 0;
+}
+
+.bdrbtomgray {
+  border-bottom: 10px solid #f7f7f7;
+}
+
+.bdrtopgray {
+  border-top: 10px solid #f7f7f7;
+}
+
+.dp_row.onlyneed {
+  display: none;
+}
+
+.hmpagewidget .dpmediacovergae #loadmorebtn {
+  display: none;
+}
+
+.hmpagewidget .dp_row.onlyneed {
+  display: flex;
+}
+
+.contactuspg .borderBootttom {
+  border-bottom: none;
+}
+
+.clearboth {
+  clear: both;
+}
+.font-bold {
+  font-weight: 700;
+}
+.seprator {
+  border-top: 10px solid #f7f7f7;
+  width: 100%;
+  clear: both;
+}
+
+section {
+  position: relative;
+}
+
+hidden {
+  overflow: hidden;
+}
+
+.centretopleft {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.centertopbtm {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.centerlftrgt {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.disnone {
+  display: none;
+}
+
+.dp_container {
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.dp_row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dp_row_inline {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.dp_rowdir_clmn {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.alignbaseline {
+  align-items: baseline;
+}
+
+.alignflxend {
+  align-items: flex-end;
+}
+
+.aligncenter {
+  align-items: center;
+}
+
+.text-align {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.justifycenter {
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.justify-contentspace {
+  justify-content: space-evenly;
+}
+
+.justify-contentspaceAround {
+  justify-content: space-around;
+}
+
+.dp_colmn {
+  position: relative;
+}
+
+.dp_flexwrap {
+  flex-wrap: wrap;
+}
+
+.dp_flexflow {
+  flex-flow: wrap;
+}
+
+.dp_justifycontentcenter {
+  justify-content: center;
+}
+
+.dp_justifycontentspcbet {
+  justify-content: space-between;
+}
+
+.dp_flexrowreverse {
+  flex-direction: row-reverse;
+}
+
+.nocursr {
+  cursor: default !important;
+}
+
+.title {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 48px;
+  text-transform: capitalize;
+}
+
+.heading {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 5rem;
+}
+
+.redheading {
+  color: #d0021b;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.commanpara {
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 15px 0 0;
+}
+
+.comman_btn {
+  background: black;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 24px;
+  border: 1px solid black;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 11px 60px 10px;
+  text-transform: uppercase;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.btncenter {
+  text-align: center;
+}
+
+.curPoint {
+  cursor: pointer;
+}
+
+#otherrole {
+  z-index: 99999;
+}
+
+/*----Header SMall End-----*/
+.mobview {
+  display: none !important;
+}
+
+.deskview {
+  display: block !important;
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------Start Media query Css------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 1002px) {
+  .menuOpenlogobox {
+    display: none;
   }
 }
 
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+@media only screen and (max-width: 1000px) {
+  p#loadView\ button\ dp_justifycontentcenter {
+    width: 170px;
+  }
+
+  .pdngtb5 {
+    padding: 2.5rem 1rem;
+  }
+
+  .clmn_onlyMob {
+    flex-direction: column-reverse;
+  }
+
+  .dp_flemM {
+    display: flex;
+  }
+
+  .dp_flexmob {
+    display: flex;
+  }
+
+  .flexclmn_onlyMob {
+    flex-direction: column;
+  }
+
+  .text-alignMob {
+    text-align: center;
+  }
+
+  .flexcenter_onlyMob {
+    justify-content: center;
+  }
+
+  .heading {
+    font-size: 20px;
+    margin-bottom: 2.5rem;
+  }
+
+  .commanpara {
+    font-size: 18px;
+  }
+
+  .comman_btn {
+    font-size: 24px;
+    border-radius: 2px;
+    padding: 10px 130px 10px;
+    margin: 28px 0 0;
+  }
+
+  .mobview {
+    display: block !important;
+  }
+
+  .deskviewflex {
+    display: none !important;
+  }
+
+  .deskview {
+    display: none !important;
+  }
+
+  .regmodel {
+    display: none;
+  }
+
+  .videogalryshow {
+    padding: 0 10px;
+  }
+
+  .dp_rowdir_clmn_onlyMob {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .dp_rowdir_clmn_revrse_onlyMob {
+    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  .homePageMainSec section {
+    padding: 0 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  .title {
+    margin: 20px auto;
+    margin-bottom: 50px;
+    font-size: 25px;
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
-}
-
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
-  display: flex;
-}
-
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
-}
+/*---------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------End Media query Css------------------------------------------*/
+/* --------------------------------------------------------------------------------------------------------- */

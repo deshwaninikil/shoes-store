@@ -1,0 +1,66 @@
+import { ACTION_TYPE } from "./constants";
+import {
+  addItemToCartService,
+  removeItemFromCartService,
+  updateCartItemService,
+} from "../services";
+
+const { ADD_TO_CART, REMOVE_FROM_CART, INC_QTY, DEC_QTY } = ACTION_TYPE;
+export const addToCart = async (product, productDispatch, token) => {
+  if (token) {
+    try {
+      const {
+        data: { cart },
+      } = await addItemToCartService({ product, token });
+
+      productDispatch({
+        type: ADD_TO_CART,
+        payload: cart,
+      });
+      //   toast.success("Product added to Cart!");
+    } catch (error) {
+      console.error(error);
+    }
+  } else {
+    // toast.error("Login to Continue");
+  }
+};
+
+export const removeFromCart = async (
+  productId,
+  productDispatch,
+  token,
+  clearCart
+) => {
+  try {
+    const {
+      data: { cart },
+    } = await removeItemFromCartService({ productId, token });
+    productDispatch({
+      type: REMOVE_FROM_CART,
+      payload: cart,
+    });
+    // clearCart === false && toast.success("Product removed from Cart!");
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const updateCartItem = async (
+  productId,
+  productDispatch,
+  actionType,
+  token
+) => {
+  try {
+    const {
+      data: { cart },
+    } = await updateCartItemService({ productId, actionType, token });
+    productDispatch({
+      type: actionType === "INC_QTY" ? INC_QTY : DEC_QTY,
+      payload: cart,
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};

@@ -3,6 +3,7 @@ import {
   addItemToCartService,
   removeItemFromCartService,
   updateCartItemService,
+  removeItemFromWishlistService,
 } from "../services";
 
 const { ADD_TO_CART, REMOVE_FROM_CART, INC_QTY, DEC_QTY } = ACTION_TYPE;
@@ -63,4 +64,9 @@ export const updateCartItem = async (
   } catch (error) {
     console.error(error);
   }
+};
+
+export const moveToCart = (product, productDispatch, token) => {
+  addToCart(product, productDispatch, token);
+  removeItemFromWishlistService(product._id, productDispatch, token);
 };

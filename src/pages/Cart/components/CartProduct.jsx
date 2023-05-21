@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ProductContext } from "../../../context/ProductContext";
+import { removeFromCart, moveToWishlist, updateCartItem } from "../../../utils";
+import { useAuth } from "../../../context/AuthContext";
 
 export const CartProduct = () => {
   const { productState, productDispatch } = useContext(ProductContext);
   const { wishlist, cart } = productState;
+  const { token } = useAuth();
 
-  // const updateQtyHandler = (productId, actionType) =>
-  //   updateCartItem(productId, productDispatch, actionType);
+  const updateQtyHandler = (productId, actionType) =>
+    updateCartItem(productId, productDispatch, actionType);
 
   return (
     <div className="cart-items-container">
@@ -22,7 +25,7 @@ export const CartProduct = () => {
           price,
           qty,
         } = product;
-        const inWishlist = wishlist.find(
+        const inWishlist = wishlist?.find(
           (wishlistItem) => wishlistItem._id === product._id
         );
 
@@ -72,22 +75,15 @@ export const CartProduct = () => {
                 </div>
                 <div className="dp_row cart-actions">
                   {inWishlist ? (
-                    <Link className="btn cartBtn" to="/wishlist">
+                    <Link className="btn primary-btn-outline" to="/wishlist">
                       Already in Wishlist
                     </Link>
                   ) : (
                     <div
-                      className="btn cartBtn"
-                      onClick={() => {
-                        productDispatch({
-                          type: "ADD_TO_WISHLIST",
-                          payload: product._id,
-                        });
-                        productDispatch({
-                          type: "REMOVE_FROM_CART",
-                          payload: product._id,
-                        });
-                      }}
+                      className="btn primary-btn-outline"
+                      onClick={() =>
+                        moveToWishlist(product, productDispatch, token)
+                      }
                     >
                       Add to Wishlist
                     </div>
@@ -95,10 +91,7 @@ export const CartProduct = () => {
                   <div
                     className="btn cartBtn"
                     onClick={() =>
-                      productDispatch({
-                        type: "REMOVE_FROM_CART",
-                        payload: product._id,
-                      })
+                      removeFromCart(product._id, productDispatch, token)
                     }
                   >
                     Remove

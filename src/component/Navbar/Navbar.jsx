@@ -11,9 +11,13 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
+import { useAuth } from "../../context/AuthContext";
 
 export const Navbar = () => {
-  const { cart, wishlist } = useContext(ProductContext);
+  const { productState } = useContext(ProductContext);
+  const { cart, wishlist } = productState;
+  const { token } = useAuth();
+  const { logoutHandler } = useAuth();
   return (
     <>
       <nav className="dp_flexmob flexclmn_onlyMob nav_container">
@@ -36,10 +40,8 @@ export const Navbar = () => {
           <div className="deskview">
             <div className="nav_search">
               <input type="text" className="search_bar" placeholder="Search" />
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className="icon_search"
-              />
+
+              <i class="fa-solid fa-magnifying-glass icon_search"></i>
             </div>
           </div>
           <div className="navConatinerRight">
@@ -50,19 +52,28 @@ export const Navbar = () => {
                 </Link>
               </li>
               <li className="nav_explore_link">
-                <button className="btn_secondary">
-                  <Link to="/login">Login</Link>
-                </button>
+                {token ? (
+                  <button className="btn_secondary" onClick={logoutHandler}>
+                    Logout
+                  </button>
+                ) : (
+                  <button className="btn_secondary">
+                    <Link to="/login">Login</Link>
+                  </button>
+                )}
               </li>
               <li>
                 <div className="btn_icon">
                   <div className="btn_icon_propery">
                     <Link to="/cart">
-                      <FontAwesomeIcon
-                        className="btn_icon_navlink"
-                        icon={faCartShopping}
-                      />
-                      {cart && cart.length}
+                      <span className="badge-wrapper">
+                        <i className="fas fa-shopping-cart btn_icon_navlink"></i>
+                        {cart.length > 0 && (
+                          <span className="dp_row justifycenter aligncenter badge-count">
+                            {cart.length}
+                          </span>
+                        )}
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -71,11 +82,14 @@ export const Navbar = () => {
                 <div className="btn_icon">
                   <div className="btn_icon_propery">
                     <Link to="/wishlist">
-                      <FontAwesomeIcon
-                        className="btn_icon_navlink"
-                        icon={faHeart}
-                      />
-                      {wishlist && wishlist.length}
+                      <span className="badge-wrapper">
+                        <i className="fas fa-heart btn_icon_navlink"></i>
+                        {wishlist.length > 0 && (
+                          <span className="dp_row justifycenter aligncenter badge-count">
+                            {wishlist.length}
+                          </span>
+                        )}
+                      </span>
                     </Link>
                   </div>
                 </div>

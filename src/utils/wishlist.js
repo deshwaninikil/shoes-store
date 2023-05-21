@@ -5,6 +5,7 @@ import {
 } from "../services";
 import { removeFromCart } from "./cart";
 const { ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } = ACTION_TYPE;
+
 export const addToWishlist = async (product, productDispatch, token) => {
   if (token) {
     try {

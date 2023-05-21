@@ -10,30 +10,20 @@
 }
 .nav_desktop {
   width: 100%;
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
 }
 .nav_left_logo {
-  /* display: flex; */
   grid-gap: 1.25rem;
   gap: 1.25rem;
-  /* align-items: center; */
 }
 .nav_logo small {
   font-weight: 100%;
 }
 .logo_container {
   max-width: 6rem;
-  /* display: flex;
-  align-items: center; */
+
   padding-left: 0.5rem;
 }
 .nav_logo {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
   font-weight: 600;
 }
 .navbar_logo {
@@ -96,7 +86,21 @@
 .btn_icon_navlink {
   padding: 0.75rem 0.75rem 0.75rem 0.25rem;
 }
-
+span.badge-wrapper {
+  position: relative;
+}
+span.badge-count {
+  position: absolute;
+  border-radius: 50%;
+  width: 13px;
+  height: 16px;
+  font-weight: 600;
+  right: 3px;
+  background-color: var(--bg-color-primary);
+  font-size: 1rem;
+  padding: 9px;
+  top: -14px;
+}
 @media screen and (max-width: 1000px) {
   .nav_search {
     width: 25rem;

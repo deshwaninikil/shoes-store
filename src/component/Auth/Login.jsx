@@ -17,6 +17,7 @@ export const Login = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    console.log(loginCred);
     loginHandler(loginCred.email, loginCred.password);
   };
 
@@ -40,7 +41,7 @@ export const Login = () => {
                   <input
                     type="text"
                     className="input_txt"
-                    alue={loginCred.email}
+                    value={loginCred.email}
                     onChange={(e) =>
                       setLoginCred({ ...loginCred, email: e.target.value })
                     }
@@ -72,12 +73,13 @@ export const Login = () => {
                 <button
                   type="submit"
                   className="btn"
-                  onClick={() =>
+                  onClick={(e) => {
                     setLoginCred({
                       email: guestLoginCred.email,
                       password: guestLoginCred.password,
-                    })
-                  }
+                    });
+                    // loginHandler(guestLoginCred.email, guestLoginCred.password);
+                  }}
                 >
                   Login as Guest User
                 </button>

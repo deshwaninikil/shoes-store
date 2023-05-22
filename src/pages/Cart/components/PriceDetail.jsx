@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 
-import {
-  totalPrice,
-  totalDiscount,
-  totalAmount,
-} from "../../../utils/calculatePriceDetails";
+import { totalPrice, totalDiscount, totalAmount } from "../../../utils";
 import { useContext } from "react";
 import { ProductContext } from "../../../context/ProductContext";
 

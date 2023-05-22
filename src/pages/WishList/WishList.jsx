@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import "./WishList.css";
 import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
-import { removeFromWishlist, moveToCart } from "../../utils";
+import {
+  removeFromWishlist,
+  moveToCart,
+  getDiscountPercent,
+} from "../../utils";
 
 import { useAuth } from "../../context/AuthContext";
 
@@ -51,12 +55,17 @@ export const WishListPage = () => {
                         <div className="card-price">
                           <span className="price-now">
                             {" "}
-                            ₹{product.original_price}
+                            ₹{product.discountedPrice}
                           </span>
-                          <span className="price-before">
-                            ₹{product.original_price}
+                          <span className="price-before">₹{product.price}</span>
+                          <span className="discount">
+                            {" "}
+                            {getDiscountPercent(
+                              product.price,
+                              product.discountedPrice
+                            )}
+                            %
                           </span>
-                          <span className="discount"> {40}%</span>
                         </div>
                       </Link>
                       <div className="action-items">

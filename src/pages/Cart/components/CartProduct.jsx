@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ProductContext } from "../../../context/ProductContext";
-import { removeFromCart, moveToWishlist, updateCartItem } from "../../../utils";
+import {
+  removeFromCart,
+  moveToWishlist,
+  updateCartItem,
+  getDiscountPercent,
+} from "../../../utils";
 import { useAuth } from "../../../context/AuthContext";
 
 export const CartProduct = () => {
@@ -10,7 +15,7 @@ export const CartProduct = () => {
   const { token } = useAuth();
 
   const updateQtyHandler = (productId, actionType) =>
-    updateCartItem(productId, productDispatch, actionType);
+    updateCartItem(productId, productDispatch, actionType, token);
 
   return (
     <div className="cart-items-container">
@@ -21,7 +26,7 @@ export const CartProduct = () => {
           description,
           title,
           category,
-          original_price,
+          discountedPrice,
           price,
           qty,
         } = product;
@@ -43,9 +48,12 @@ export const CartProduct = () => {
                   <div className="item-title">{description}</div>
                   <div className="item-subtitle">{title}</div>
                   <div className="card-price">
-                    <span className="price-now">₹{original_price * qty}</span>
+                    <span className="price-now">₹{discountedPrice * qty}</span>
                     <span className="price-before"> ₹{price * qty}</span>
-                    <span className="discount">{40}%</span>
+                    <span className="discount">
+                      {" "}
+                      {getDiscountPercent(price, discountedPrice)}%
+                    </span>
                   </div>
                   <div className="coupon-details font-bold">
                     No coupons & offers applied
@@ -60,7 +68,7 @@ export const CartProduct = () => {
                 <div className="dp_row justifycenter aligncenter quantity">
                   <button
                     className="quantity-btn"
-                    // onClick={() => updateQtyHandler(product._id, "DEC_QTY")}
+                    onClick={() => updateQtyHandler(product._id, "DEC_QTY")}
                     disabled={qty === 1}
                   >
                     -
@@ -68,7 +76,7 @@ export const CartProduct = () => {
                   <span className="text-align qantity-value">{qty}</span>
                   <button
                     className="quantity-btn"
-                    // onClick={() => updateQtyHandler(product._id, "INC_QTY")}
+                    onClick={() => updateQtyHandler(product._id, "INC_QTY")}
                   >
                     +
                   </button>

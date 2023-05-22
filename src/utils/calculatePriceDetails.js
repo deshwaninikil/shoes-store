@@ -16,3 +16,7 @@ export const totalAmount = (cart) => {
     0
   );
 };
+
+export const getDiscountPercent = (price, discountedPrice) => {
+  return Math.round((1 - discountedPrice / price) * 100);
+};

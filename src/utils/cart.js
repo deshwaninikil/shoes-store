@@ -5,6 +5,7 @@ import {
   updateCartItemService,
   removeItemFromWishlistService,
 } from "../services";
+import { removeFromWishlist } from "./wishlist";
 
 const { ADD_TO_CART, REMOVE_FROM_CART, INC_QTY, DEC_QTY } = ACTION_TYPE;
 export const addToCart = async (product, productDispatch, token) => {
@@ -13,7 +14,7 @@ export const addToCart = async (product, productDispatch, token) => {
       const {
         data: { cart },
       } = await addItemToCartService({ product, token });
-
+      console.log("wishlist", cart);
       productDispatch({
         type: ADD_TO_CART,
         payload: cart,
@@ -68,5 +69,5 @@ export const updateCartItem = async (
 
 export const moveToCart = (product, productDispatch, token) => {
   addToCart(product, productDispatch, token);
-  removeItemFromWishlistService(product._id, productDispatch, token);
+  removeFromWishlist(product._id, productDispatch, token);
 };

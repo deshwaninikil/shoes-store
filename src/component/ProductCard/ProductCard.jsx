@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import "./ProductCard.css";
-import { addToCart, removeFromWishlist, addToWishlist } from "../../utils";
+import {
+  addToCart,
+  removeFromWishlist,
+  addToWishlist,
+  getDiscountPercent,
+} from "../../utils";
 import { useAuth } from "../../context/AuthContext";
 
 export const ProductCard = ({ product }) => {
@@ -15,7 +20,7 @@ export const ProductCard = ({ product }) => {
     description,
     title,
     category,
-    original_price,
+    discountedPrice,
     price,
   } = product;
 
@@ -51,9 +56,12 @@ export const ProductCard = ({ product }) => {
         <div className="card-text">{title}</div>
         <div className="dp_row aligncenter dp_justifycontentspcbet card-bottom">
           <div className="card-price">
-            <span className="price-now pl-0-5">₹{price}</span>
-            <span className="price-before pl-0-5">₹{original_price}</span>
-            <span className="discount pl-0-5">{40}%</span>
+            <span className="price-now pl-0-5">₹{discountedPrice}</span>
+            <span className="price-before pl-0-5">₹{price}</span>
+            <span className="discount pl-0-5">
+              {" "}
+              {getDiscountPercent(price, discountedPrice)}%
+            </span>
           </div>
           <div className="dp_row aligncenter card-rating">
             <span>{rating}</span>

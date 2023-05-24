@@ -23,7 +23,7 @@ export const CartPage = () => {
         <div className="cart-body">
           <div className="dp_row dp_justifycontentspcbet aligncenter cart-product-section">
             <div className="cart-header">
-              <h3>My Cart</h3>
+              <h3>My Cart ({cart.length})</h3>
             </div>
             <div className="border-bottom"></div>
 

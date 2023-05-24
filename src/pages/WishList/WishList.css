@@ -58,3 +58,34 @@
 .empty-info {
   margin: 1rem;
 }
+
+@media screen and (max-width: 1000px) {
+  .wishlist-section {
+    margin-top: 8rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .wishlist-section {
+    margin-top: 8rem;
+  }
+  .wishlist-item {
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .wishlist-item .action-items {
+    margin-left: initial;
+    margin-bottom: 1rem;
+  }
+
+  .wishlist-item .item-image {
+    width: inherit;
+  }
+  .wishlist-item .item-details {
+    margin-left: 0rem;
+  }
+}

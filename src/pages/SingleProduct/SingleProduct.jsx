@@ -3,10 +3,18 @@ import "./SingleProduct.css";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../../context/ProductContext";
+import {
+  getDiscountPercent,
+  addToCart,
+  addToWishlist,
+  removeFromWishlist,
+} from "../../utils";
+import { useAuth } from "../../context/AuthContext";
 
 export const SingleProduct = () => {
   const { productId } = useParams();
   const { productState, productDispatch } = useContext(ProductContext);
+  const { token } = useAuth();
 
   const { products, cart, wishlist } = productState;
   const currentProduct = products.find((product) => product._id === productId);
@@ -34,12 +42,19 @@ export const SingleProduct = () => {
             </div>
             <div className="card-price">
               <span className="price-now pl-0-5">
-                ₹{currentProduct.original_price}
+                ₹{currentProduct.discountedPrice}
               </span>
               <span className="price-before pl-0-5">
                 ₹{currentProduct.price}
               </span>
-              <span className="discount pl-0-5">{40}%</span>
+              <span className="discount pl-0-5">
+                {" "}
+                {getDiscountPercent(
+                  currentProduct.price,
+                  currentProduct.discountedPrice
+                )}
+                %
+              </span>
             </div>
           </div>
 
@@ -79,30 +94,20 @@ export const SingleProduct = () => {
             </Link>
           ) : (
             <button
-              className="btn"
-              onClick={() =>
-                productDispatch({
-                  type: "ADD_TO_CART",
-                  payload: currentProduct._id,
-                })
-              }
+              className="btn primary-btn-solid"
+              onClick={() => {
+                addToCart(currentProduct, productDispatch, token);
+              }}
             >
               Add to Cart
             </button>
           )}
           <button
             className={`like-icon ${inWishlist ? "liked" : ""}`}
-            onClick={(e) => {
+            onClick={() => {
               inWishlist
-                ? productDispatch({
-                    type: "REMOVE_FROM_WISHLIST",
-                    payload: currentProduct._id,
-                  })
-                : productDispatch({
-                    type: "ADD_TO_WISHLIST",
-                    payload: currentProduct._id,
-                  });
-              e.preventDefault();
+                ? removeFromWishlist(currentProduct._id, productDispatch, token)
+                : addToWishlist(currentProduct, productDispatch, token);
             }}
           >
             <i className="fas fa-heart"></i>

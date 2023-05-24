@@ -11,6 +11,9 @@
   padding: 0.4rem;
   text-transform: capitalize;
 }
+.category_title:hover {
+  color: #fff;
+}
 .highlight {
   position: relative;
   font-weight: normal;

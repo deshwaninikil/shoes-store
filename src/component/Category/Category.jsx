@@ -1,14 +1,22 @@
-import img_men from "../../logos/category_imgs/men.jpg";
-import img_women from "../../logos/category_imgs/women.jpg";
-import img_kids from "../../logos/category_imgs/kids.jpg";
 import "./Category.css";
-const images = [
-  { img: img_men, title: "Shop men's" },
-  { img: img_women, title: "Shop womes's" },
-  { img: img_kids, title: "Shop kid's" },
-];
+import { getAllCategoriesService } from "../../services/categoryServices";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 const arrow = ">>";
 export const Category = () => {
+  const [categoryData, setCategoryData] = useState([]);
+  const fetchCategory = async () => {
+    try {
+      const { data } = await getAllCategoriesService();
+      setCategoryData(data.categories);
+    } catch (error) {
+      console.log("Error in fetching categories", error);
+    }
+  };
+  useEffect(() => {
+    fetchCategory();
+  }, []);
   return (
     <>
       <section class="category">
@@ -16,15 +24,17 @@ export const Category = () => {
           <div className="dp_row dp_rowdir_clmn aligncenter dp_justifycontentcenter dp_flexwrap">
             <h2 className="heading highlight">Shop by Category</h2>
             <div className="category_mainConatiner">
-              {images.map(({ img, title }) => (
+              {categoryData.map(({ _id, title, image }) => (
                 <div className="category_container" key={title}>
                   <div class="category_img">
-                    <img src={img} />
+                    <img src={image} />
                   </div>
-                  <h3 className="text-align category_title">
-                    {title}
-                    <strong>{arrow}</strong>
-                  </h3>
+                  <Link to="/product">
+                    <h3 className="text-align category_title">
+                      {title}
+                      <strong>{arrow}</strong>
+                    </h3>
+                  </Link>
                 </div>
               ))}
             </div>

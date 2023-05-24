@@ -73,3 +73,29 @@
 .product-details .detail .deatil-name {
   font-weight: 600;
 }
+
+@media screen and (max-width: 1000px) {
+  .single-section {
+    margin-top: 8rem;
+  }
+}
+@media screen and (max-width: 730px) {
+  .right-part .like-icon {
+    top: 0%;
+    right: 15%;
+  }
+  .single-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .single-card .right-part {
+    gap: 1rem;
+    top: 15px;
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .card-tags {
+    font-size: 0.8rem;
+  }
+}

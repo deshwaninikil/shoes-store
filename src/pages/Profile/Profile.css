@@ -1,0 +1,51 @@
+.profile-section {
+  flex-grow: 1;
+  margin-top: 5rem;
+}
+
+.profile-container {
+  margin: 0 auto;
+  box-shadow: 0 0 4px 0px var(--dark-gray-color);
+  max-width: 25rem;
+}
+
+.profile-section .profile-header {
+  margin: 1rem 1.2rem;
+}
+
+.profile-section .profile-body {
+  gap: 2rem;
+  margin: 1rem 1.2rem;
+  padding: 1rem;
+}
+
+.profile-body .profile-item {
+  gap: 1rem;
+}
+
+.profile-body .avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.profile-details {
+  gap: 20px;
+}
+
+.logout-btn {
+  align-self: center;
+  width: 10rem;
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .profile-section {
+    margin-top: 9rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .profile-section .profile-body {
+    flex-direction: column;
+    align-items: center;
+  }
+}

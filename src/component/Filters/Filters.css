@@ -65,3 +65,14 @@
 .text-grey {
   color: var(--dark-gray-color);
 }
+
+@media screen and (max-width: 1000px) {
+  .filter-section {
+    padding-top: 4rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  .filter-section {
+    display: none;
+  }
+}

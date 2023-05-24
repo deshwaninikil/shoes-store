@@ -6,7 +6,7 @@
 .products-section {
   flex-grow: 1;
   overflow: auto;
-  padding: 10px 20px;
+  padding: 1rem 1rem;
 }
 
 .product-list-grid {
@@ -54,3 +54,50 @@
 }
 
 /* ---------------------------------End Card Stylings-----------------------------------  */
+
+@media screen and (max-width: 1000px) {
+  .products-section {
+    padding: 5rem 1rem;
+  }
+}
+@media screen and (max-width: 817px) {
+  .products-section {
+    padding: 5rem 1rem;
+  }
+  .product-list-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ecomm-card {
+    min-width: 14rem;
+    max-width: 14rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .product-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 0 0;
+  }
+  .ecomm-card {
+    max-width: 10rem;
+    min-width: 10rem;
+  }
+  .card-head {
+    padding: 0.2rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .products-section {
+    padding: 5rem 2rem;
+  }
+  .product-list-grid {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 2rem 0 0;
+  }
+  .ecomm-card {
+    max-width: 10rem;
+    min-width: 10rem;
+  }
+  h3.product-heading {
+    font-size: 0.8rem;
+  }
+}

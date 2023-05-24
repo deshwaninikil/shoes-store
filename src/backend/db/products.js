@@ -9,7 +9,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Men",
+    category: "men",
     rating: "4.0",
     size: "9",
     description: "High Tops For Men",
@@ -25,7 +25,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Men",
+    category: "men",
     rating: "4.5",
     size: "10",
     description: "Sneakers For Men",
@@ -41,7 +41,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Men",
+    category: "men",
     rating: "2.5",
     size: "8",
     description: "Sports Training & Gym Shoes For Men",
@@ -57,7 +57,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Men",
+    category: "men",
     rating: "2.5",
     size: "10",
     description: "Casuals For Men",
@@ -73,7 +73,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Women",
+    category: "women",
     rating: "5.0",
     size: "8",
     description: "Running Shoes For Women",
@@ -89,7 +89,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Women",
+    category: "women",
     rating: "2.5",
     size: "9",
     description: "Puma Harper Wns Sneakers For Women",
@@ -105,7 +105,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Women",
+    category: "women",
     rating: "4.5",
     size: "7",
     description: "R78 Voyage Wild Garden Casuals",
@@ -121,7 +121,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Women",
+    category: "women",
     rating: "3.5",
     size: "8",
     description: "Bellies For Women",
@@ -137,7 +137,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Kids",
+    category: "kids",
     rating: "4.5",
     size: "5",
     description: "Lace Sneakers",
@@ -153,7 +153,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Kids",
+    category: "kids",
     rating: "3.0",
     size: "4",
     description: "Lace Walking Shoes",
@@ -169,7 +169,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Kids",
+    category: "kids",
     rating: "4.5",
     size: "4",
     description: "Slip on Walking Shoes",
@@ -185,7 +185,7 @@ export const products = [
     _id: uuid(),
     image:
       "https://res.cloudinary.com/donqbxlnc/image/upload/v1648516571/fashify/25d7ff1d-6680-4629-b7f8-dda51fb89dc61592396707535-Nautica-Men-Tshirts-3811592396706267-4_hxanis.webp",
-    category: "Kids",
+    category: "kids",
     rating: "3.5",
     size: "3",
     description: "Lace Sneakers",

@@ -13,6 +13,7 @@ import { Navbar } from "./component/Navbar/Navbar";
 import { Footer } from "./component/Footer/Footer";
 import { SingleProduct } from "./pages/SingleProduct/SingleProduct";
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
+import { Profile } from "./pages/Profile/Profile";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path="/cart" element={<CartPage />} />
             <Route path="/wishlist" element={<WishListPage />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
         </Routes>
       </ResetScroll>

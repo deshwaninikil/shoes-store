@@ -8,20 +8,23 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
-    description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+    category: "men",
+    title: "Shop Men's",
+    image:
+      "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechersin-Library/default/dwdb3fc61c/Home-Page/skx58039-homepagecontentblocks-feb2023-1500x1304-men.jpg?sw=500",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
-    description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+    category: "women",
+    title: "Shop womes's",
+    image:
+      "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechersin-Library/default/dw5004b5a3/Home-Page/skx58039-homepagecontentblocks-feb2023-1500x1304-women.jpg?sw=500",
   },
   {
     _id: uuid(),
-    categoryName: "horror",
-    description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+    category: "kids",
+    title: "Shop kid's",
+    image:
+      "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechersin-Library/default/dwe9b202c0/Home-Page/skx58039-homepagecontentblocks-feb2023-1500x1304-boys.jpg?sw=500",
   },
 ];

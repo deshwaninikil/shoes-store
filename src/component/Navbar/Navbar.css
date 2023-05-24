@@ -104,6 +104,11 @@ span.badge-count {
 @media screen and (max-width: 1000px) {
   .nav_search {
     width: 25rem;
+    padding-top: 0.5rem;
+    margin: 0 auto;
+  }
+  .nav_search .icon_search {
+    top: 40%;
   }
 }
 @media screen and (max-width: 750px) {

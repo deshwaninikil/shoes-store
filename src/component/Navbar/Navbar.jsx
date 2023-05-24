@@ -2,16 +2,17 @@ import { Link } from "react-router-dom";
 import navbarLogo from "../../logos/navbarLogo.png";
 
 import "./Navbar.css";
-import {
-  faHeart,
-  faCartShopping,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faHeart,
+//   faCartShopping,
+//   faMagnifyingGlass,
+// } from "@fortawesome/free-solid-svg-icons";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import { useAuth } from "../../context/AuthContext";
+import { UserAvatar } from "../UserAvatar/UserAvatar";
 
 export const Navbar = () => {
   const { productState } = useContext(ProductContext);
@@ -40,7 +41,6 @@ export const Navbar = () => {
           <div className="deskview">
             <div className="nav_search">
               <input type="text" className="search_bar" placeholder="Search" />
-
               <i class="fa-solid fa-magnifying-glass icon_search"></i>
             </div>
           </div>
@@ -53,9 +53,9 @@ export const Navbar = () => {
               </li>
               <li className="nav_explore_link">
                 {token ? (
-                  <button className="btn_secondary" onClick={logoutHandler}>
-                    Logout
-                  </button>
+                  <Link to="/profile">
+                    <UserAvatar />
+                  </Link>
                 ) : (
                   <button className="btn_secondary">
                     <Link to="/login">Login</Link>
@@ -100,7 +100,7 @@ export const Navbar = () => {
         <div className="mobview">
           <div className="nav_search">
             <input type="text" className="search_bar" placeholder="Search" />
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="icon_search" />
+            <i class="fa-solid fa-magnifying-glass icon_search"></i>
           </div>
         </div>
       </nav>

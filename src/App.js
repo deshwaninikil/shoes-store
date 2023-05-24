@@ -14,6 +14,7 @@ import { Footer } from "./component/Footer/Footer";
 import { SingleProduct } from "./pages/SingleProduct/SingleProduct";
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
 import { Profile } from "./pages/Profile/Profile";
+import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/singleProduct/:productId" element={<SingleProduct />} />
+          <Route path="*" element={<PageNotFound />} />
 
           <Route element={<PrivateRoute />}>
             <Route path="/cart" element={<CartPage />} />

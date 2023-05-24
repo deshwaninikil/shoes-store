@@ -1,0 +1,14 @@
+.notFound-container {
+  gap: 1rem;
+  margin-top: 3rem;
+  flex-grow: 1;
+}
+.notFound-container .commanpara {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  .notFound-container {
+    margin-top: 7rem;
+  }
+}

@@ -8,7 +8,7 @@ import {
 import { removeFromWishlist } from "./wishlist";
 
 const { ADD_TO_CART, REMOVE_FROM_CART, INC_QTY, DEC_QTY } = ACTION_TYPE;
-export const addToCart = async (product, productDispatch, token) => {
+export const addToCart = async (product, productDispatch, token, navigate) => {
   if (token) {
     try {
       const {
@@ -25,6 +25,8 @@ export const addToCart = async (product, productDispatch, token) => {
     }
   } else {
     // toast.error("Login to Continue");
+    console.log("Login to Continue");
+    navigate("/login");
   }
 };
 

@@ -6,7 +6,12 @@ import {
 import { removeFromCart } from "./cart";
 const { ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } = ACTION_TYPE;
 
-export const addToWishlist = async (product, productDispatch, token) => {
+export const addToWishlist = async (
+  product,
+  productDispatch,
+  token,
+  navigate
+) => {
   if (token) {
     try {
       const {
@@ -20,6 +25,7 @@ export const addToWishlist = async (product, productDispatch, token) => {
       console.error(error);
     }
   } else {
+    navigate("/login");
   }
 };
 

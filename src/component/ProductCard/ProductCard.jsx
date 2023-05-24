@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import "./ProductCard.css";
@@ -23,6 +23,7 @@ export const ProductCard = ({ product }) => {
     discountedPrice,
     price,
   } = product;
+  const navigate = useNavigate();
 
   const inWishlist = wishlist.find((wishlistItem) => wishlistItem._id === _id);
 
@@ -47,7 +48,7 @@ export const ProductCard = ({ product }) => {
           onClick={(e) => {
             inWishlist
               ? removeFromWishlist(product._id, productDispatch, token)
-              : addToWishlist(product, productDispatch, token);
+              : addToWishlist(product, productDispatch, token, navigate);
             e.preventDefault();
           }}
         >
@@ -76,7 +77,7 @@ export const ProductCard = ({ product }) => {
           <button
             className="btn primary-btn-solid"
             onClick={(e) => {
-              addToCart(product, productDispatch, token);
+              addToCart(product, productDispatch, token, navigate);
               e.preventDefault();
             }}
           >

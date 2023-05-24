@@ -26,10 +26,7 @@ export const Profile = () => {
               </div>
             </div>
           </div>
-          <button
-            className="btn primary-btn-solid font-bold logout-btn"
-            onClick={logoutHandler}
-          >
+          <button className="btn logout-btn" onClick={logoutHandler}>
             Logout
           </button>
         </div>

@@ -41,7 +41,9 @@ export const PriceDetail = () => {
           You will save ₹{totalPrice(cart) - totalAmount(cart)} on this order
         </div>
 
-        <Link className="btn primary-btn-solid font-bold">Checkout</Link>
+        <Link className="btn primary-btn-solid font-bold" to="/checkout">
+          Checkout
+        </Link>
       </div>
     </div>
   );

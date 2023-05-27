@@ -1,4 +1,6 @@
 import "./App.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Login } from "./component/Auth/Login";
 import { SignUp } from "./component/Auth/SignUp";
 import { CartPage } from "./pages/Cart/Cart";
@@ -15,10 +17,24 @@ import { SingleProduct } from "./pages/SingleProduct/SingleProduct";
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
 import { Profile } from "./pages/Profile/Profile";
 import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
+import { Checkout } from "./pages/Checkout/Checkout";
+import { OrderSummary } from "./pages/OrderSummary/OrderSummary";
 
 function App() {
   return (
     <div className="App">
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <Navbar />
       <ResetScroll>
         <Routes>
@@ -34,6 +50,8 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/wishlist" element={<WishListPage />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/order-summary/:orderId" element={<OrderSummary />} />
           </Route>
         </Routes>
       </ResetScroll>

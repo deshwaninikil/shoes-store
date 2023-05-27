@@ -1,4 +1,10 @@
-export { addToCart, removeFromCart, updateCartItem, moveToCart } from "./cart";
+export {
+  addToCart,
+  removeFromCart,
+  updateCartItem,
+  moveToCart,
+  clearCart,
+} from "./cart";
 export { addToWishlist, moveToWishlist, removeFromWishlist } from "./wishlist";
 export {
   totalPrice,
@@ -6,3 +12,13 @@ export {
   totalAmount,
   getDiscountPercent,
 } from "./calculatePriceDetails";
+export {
+  getPriceRangeData,
+  getCategoryData,
+  getSearchedData,
+  getRatedData,
+  getSortedData,
+} from "./Filter";
+export { addOrders, getOrders } from "./order";
+
+export { particles } from "./particles";

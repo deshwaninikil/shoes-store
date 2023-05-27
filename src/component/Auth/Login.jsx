@@ -2,6 +2,8 @@ import { useAuth } from "../../context/AuthContext";
 import "./Auth.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useShowPassword } from "../../Hooks/useShowPassword";
+
 export const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ export const Login = () => {
     password: "nikhik@1995",
   };
 
-  // const { showPass, togglePassword } = useShowPassword();
+  const { showPass, togglePassword } = useShowPassword();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -50,10 +52,10 @@ export const Login = () => {
                 </div>
               </div>
               <div className="auth_items">
-                <div className="input_group password_div">
+                <div className="input_group password-div">
                   <label className="input_label">Password</label>
                   <input
-                    type="password"
+                    type={`${showPass ? "text" : "password"}`}
                     className="input_txt"
                     value={loginCred.password}
                     onChange={(e) =>
@@ -61,6 +63,13 @@ export const Login = () => {
                     }
                     required
                   />
+                  <span className="password-icon" onClick={togglePassword}>
+                    <i
+                      className={`fa-solid ${
+                        showPass ? "fa-eye " : "fa-eye-slash"
+                      }`}
+                    ></i>
+                  </span>
                 </div>
               </div>
               {authError.length > 0 && (
@@ -78,13 +87,11 @@ export const Login = () => {
                       email: guestLoginCred.email,
                       password: guestLoginCred.password,
                     });
-                    // loginHandler(guestLoginCred.email, guestLoginCred.password);
                   }}
                 >
                   Login as Guest User
                 </button>
               </div>
-
               <div className="auth_items signup_item">
                 Need an account?
                 <Link to="/signup" className="auth_llnk">

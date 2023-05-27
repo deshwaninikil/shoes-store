@@ -118,6 +118,16 @@
   background-color: var(--light-blue-color);
   color: var(--bg-color-primary);
 }
+.password-div {
+  position: relative;
+}
+span.password-icon {
+  bottom: 12px;
+  cursor: pointer;
+  margin-right: 5px;
+  position: absolute;
+  right: 5px;
+}
 @media screen and (max-width: 1000px) {
   .auth_section {
     /* margin: 8.5rem 0 2.5rem; */

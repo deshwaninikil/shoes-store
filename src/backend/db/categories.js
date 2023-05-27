@@ -8,21 +8,21 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    category: "men",
+    categoryName: "men",
     title: "Shop Men's",
     image:
       "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechersin-Library/default/dwdb3fc61c/Home-Page/skx58039-homepagecontentblocks-feb2023-1500x1304-men.jpg?sw=500",
   },
   {
     _id: uuid(),
-    category: "women",
+    categoryName: "women",
     title: "Shop womes's",
     image:
       "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechersin-Library/default/dw5004b5a3/Home-Page/skx58039-homepagecontentblocks-feb2023-1500x1304-women.jpg?sw=500",
   },
   {
     _id: uuid(),
-    category: "kids",
+    categoryName: "kids",
     title: "Shop kid's",
     image:
       "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechersin-Library/default/dwe9b202c0/Home-Page/skx58039-homepagecontentblocks-feb2023-1500x1304-boys.jpg?sw=500",

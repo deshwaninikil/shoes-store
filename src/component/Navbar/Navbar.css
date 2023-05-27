@@ -6,7 +6,7 @@
   left: 0;
   background: #f7f7f7;
   z-index: 999;
-  padding: 0.5rem 0;
+  padding: 0.8rem 0;
 }
 .nav_desktop {
   width: 100%;
@@ -27,7 +27,9 @@
   font-weight: 600;
 }
 .navbar_logo {
-  width: 100%;
+  /* width: 100%; */
+  width: 88px;
+  height: 45px;
 }
 
 .nav_search {
@@ -82,6 +84,7 @@
 .btn_icon_propery {
   grid-column: 1/2;
   grid-row: 1/2;
+  font-size: 1.5rem;
 }
 .btn_icon_navlink {
   padding: 0.75rem 0.75rem 0.75rem 0.25rem;
@@ -96,19 +99,31 @@ span.badge-count {
   height: 16px;
   font-weight: 600;
   right: 3px;
-  background-color: var(--bg-color-primary);
+  background-color: var(--black-color);
+  color: var(--bg-color-primary);
   font-size: 1rem;
   padding: 9px;
   top: -14px;
 }
+.nav_mobview {
+  display: none;
+}
 @media screen and (max-width: 1000px) {
   .nav_search {
-    width: 25rem;
+    /* width: 25rem; */
     padding-top: 0.5rem;
     margin: 0 auto;
   }
   .nav_search .icon_search {
     top: 40%;
+  }
+}
+@media screen and (max-width: 890px) {
+  .nav_deskview {
+    display: none;
+  }
+  .nav_mobview {
+    display: block;
   }
 }
 @media screen and (max-width: 750px) {
@@ -120,7 +135,7 @@ span.badge-count {
     margin: 0 auto;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .nav_search {
     width: 18rem;
   }

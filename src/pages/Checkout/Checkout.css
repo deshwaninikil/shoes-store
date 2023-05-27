@@ -1,0 +1,46 @@
+.main-checkout-section {
+  flex-grow: 1;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 6rem;
+}
+
+/*** OrderDetails CSS ***/
+.order-section {
+  /* display: flex;
+  flex-direction: column; */
+  box-shadow: 0 0 4px 0px var(--dark-gray-color);
+  max-height: 30rem;
+}
+.order-col {
+  padding: 1rem;
+}
+
+.order-col h3 {
+  text-align: center;
+  text-decoration: underline;
+}
+.order-content,
+.price-content {
+  /* display: flex;
+  flex-direction: column; */
+  gap: 10px;
+}
+
+.order-heading {
+  margin-bottom: 1rem;
+}
+
+.order-item,
+.price-item {
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+.order-button {
+  align-self: center;
+  margin-bottom: 1rem;
+  width: 15rem;
+  height: 3rem;
+  text-transform: uppercase;
+}

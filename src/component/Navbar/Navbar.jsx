@@ -13,12 +13,13 @@ import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import { useAuth } from "../../context/AuthContext";
 import { UserAvatar } from "../UserAvatar/UserAvatar";
+import { SearchBar } from "../SearchBar/SearchBar";
 
 export const Navbar = () => {
-  const { productState } = useContext(ProductContext);
+  const { productState, productDispatch } = useContext(ProductContext);
   const { cart, wishlist } = productState;
   const { token } = useAuth();
-  const { logoutHandler } = useAuth();
+
   return (
     <>
       <nav className="dp_flexmob flexclmn_onlyMob nav_container">
@@ -38,11 +39,8 @@ export const Navbar = () => {
             </div>
           </div>
 
-          <div className="deskview">
-            <div className="nav_search">
-              <input type="text" className="search_bar" placeholder="Search" />
-              <i class="fa-solid fa-magnifying-glass icon_search"></i>
-            </div>
+          <div className="nav_deskview">
+            <SearchBar />
           </div>
           <div className="navConatinerRight">
             <ul className="dp_row aligncenter justify-contentspace btn_link">
@@ -97,11 +95,8 @@ export const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div className="mobview">
-          <div className="nav_search">
-            <input type="text" className="search_bar" placeholder="Search" />
-            <i class="fa-solid fa-magnifying-glass icon_search"></i>
-          </div>
+        <div className="nav_mobview">
+          <SearchBar />
         </div>
       </nav>
     </>

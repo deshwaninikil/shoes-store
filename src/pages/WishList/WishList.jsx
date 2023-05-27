@@ -26,7 +26,7 @@ export const WishListPage = () => {
         ) : (
           <div>
             <div className="wishlist-header">
-              <h3>My Wishlist {wishlist.length}</h3>
+              <h3>My Wishlist ({wishlist.length})</h3>
             </div>
             <div className="border-bottom"></div>
             <div className="dp_row dp_rowdir_clmn wishlist-items-container">

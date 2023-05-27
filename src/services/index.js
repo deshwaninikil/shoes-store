@@ -10,4 +10,6 @@ export {
   addItemToWishlistService,
   removeItemFromWishlistService,
 } from "./wishlistServices";
+export { getAllCategoriesService } from "./categoryServices";
 export { loginService, singupService } from "./authServices";
+export { getOrdersService, addOrdersService } from "./ordersService";

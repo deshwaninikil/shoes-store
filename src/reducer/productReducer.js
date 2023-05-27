@@ -1,14 +1,29 @@
-import { products } from "../backend/db/products";
 import { ACTION_TYPE } from "../utils/constants";
 export const productReducer = (productState, action) => {
   const { type, payload } = action;
+
+  let categoryData = {};
 
   switch (type) {
     case ACTION_TYPE.INITIAL_DATA:
       return { ...productState, products: payload };
 
+    case ACTION_TYPE.INITIALIZE_CATEGORY:
+      categoryData = action.payload.reduce(
+        (catObj, catItem) => ({
+          ...catObj,
+          [catItem.categoryName]: false,
+        }),
+        {}
+      );
+      return {
+        ...productState,
+        selectedCategory: {
+          ...categoryData,
+        },
+      };
+
     case ACTION_TYPE.ADD_TO_CART:
-      // const selectedProduct = products.find(({ _id }) => _id === payload);
       return {
         ...productState,
 
@@ -40,6 +55,46 @@ export const productReducer = (productState, action) => {
       return {
         ...productState,
         cart: [...action.payload],
+      };
+
+    case ACTION_TYPE.PRICE_CHANGE:
+      return {
+        ...productState,
+        priceRange: action.payload,
+      };
+    case ACTION_TYPE.CATEGORY_CHANGE:
+      const newSelectedCategory = {
+        ...productState.selectedCategory,
+        ...action.payload,
+      };
+      return {
+        ...productState,
+        selectedCategory: newSelectedCategory,
+      };
+
+    case ACTION_TYPE.RATING_CHANGE:
+      return {
+        ...productState,
+        rating: action.payload,
+      };
+    case ACTION_TYPE.SORT_BY:
+      return {
+        ...productState,
+        sortBy: action.payload,
+      };
+    case ACTION_TYPE.CLEAR_ALL:
+      return {
+        ...productState,
+        products: [...productState.products],
+        priceRange: 3999,
+        selectedCategory: categoryData,
+        sortBy: "",
+        rating: "",
+      };
+    case ACTION_TYPE.SEARCH:
+      return {
+        ...productState,
+        searchText: payload,
       };
 
     default:

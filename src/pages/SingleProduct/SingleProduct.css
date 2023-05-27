@@ -17,6 +17,7 @@
   width: 17rem;
   height: 20rem;
   object-fit: contain;
+  margin-right: 1.5rem;
 }
 
 .single-card .right-part {

@@ -2,11 +2,13 @@ import "./Auth.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useEffect, useState } from "react";
+import { useShowPassword } from "../../Hooks/useShowPassword";
 
 export const SignUp = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { token, signUpHandler, authError, loading } = useAuth();
+  const { token, signUpHandler, authError } = useAuth();
+  const { showPass, togglePassword } = useShowPassword();
   const [signUpForm, setSignUpForm] = useState({
     firstName: "",
     lastName: "",
@@ -84,10 +86,10 @@ export const SignUp = () => {
                 </div>
               </div>
               <div className="auth_items">
-                <div className="input_group passwordDiv">
+                <div className="input_group password-div">
                   <label className="input_label">Password</label>
                   <input
-                    type="password"
+                    type={`${showPass ? "text" : "password"}`}
                     className="input_txt"
                     onChange={(e) =>
                       setSignUpForm({
@@ -97,6 +99,13 @@ export const SignUp = () => {
                     }
                     required
                   />
+                  <span className="password-icon" onClick={togglePassword}>
+                    <i
+                      className={`fa-solid ${
+                        showPass ? "fa-eye " : "fa-eye-slash"
+                      }`}
+                    ></i>
+                  </span>
                 </div>
               </div>
               {authError.length > 0 && (

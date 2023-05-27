@@ -34,7 +34,7 @@ export const SingleProduct = () => {
           />
         </div>
         <div className="dp_row dp_rowdir_clmn right-part">
-          <div classNameclmn="dp_row dp_rowdir_clmn card-top">
+          <div className="dp_row dp_rowdir_clmn card-top">
             <h2 className="card-title">{currentProduct.title}</h2>
             <div className="justifycenter card-rating">
               <span>{currentProduct.rating}</span>

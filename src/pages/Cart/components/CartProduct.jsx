@@ -20,16 +20,8 @@ export const CartProduct = () => {
   return (
     <div className="cart-items-container">
       {cart.map((product) => {
-        const {
-          image,
-          rating,
-          description,
-          title,
-          category,
-          discountedPrice,
-          price,
-          qty,
-        } = product;
+        const { image, description, title, discountedPrice, price, qty } =
+          product;
         const inWishlist = wishlist?.find(
           (wishlistItem) => wishlistItem._id === product._id
         );

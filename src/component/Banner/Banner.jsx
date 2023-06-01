@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Banner.css";
-import banner_img1 from "../../logos/banner_img1.jpg";
-import banner_img2 from "../../logos/banner_img2.jpg";
-import banner_img3 from "../../logos/banner_img3.jpg";
+import banner_img1 from "../../assets/banner_images/banner_img1.jpg";
+import banner_img2 from "../../assets/banner_images/banner_img2.jpg";
+import banner_img3 from "../../assets/banner_images/banner_img3.jpg";
 
 const images = [banner_img1, banner_img2, banner_img3];
 
@@ -24,7 +24,7 @@ export const Banner = () => {
           <img
             key={index}
             src={image}
-            alt={`banner image ${index}`}
+            alt={`bannerimage${index}`}
             className={`carousel-image ${
               index === currentImageIndex ? "active" : ""
             }`}

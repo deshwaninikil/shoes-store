@@ -17,10 +17,6 @@
   width: 100%;
 }
 
-/* .card-head .image-badge-div .product-image {
-  height: 20rem;
-} */
-
 .liked {
   transform: scale(1.1);
   color: var(--red-color);
@@ -29,28 +25,22 @@
 
 /* ---------------------------------Start Card Stylings-----------------------------------  */
 
-.card-bottom {
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
-}
-
 .card-rating {
   background-color: var(--yellow-color);
   color: #fff;
   padding: 5px 7px;
   border-radius: 10px;
   font-size: 10px;
-  /* display: flex;
-  align-items: center; */
+
   gap: 2px;
   font-weight: bold;
 }
 
 .no-product {
   height: 100%;
-  /* display: flex;
-  justify-content: center; */
+}
+.filter-btn {
+  display: none;
 }
 
 /* ---------------------------------End Card Stylings-----------------------------------  */
@@ -84,27 +74,31 @@
     max-width: 14rem;
   }
 }
-@media screen and (max-width: 750px) {
-  .product-list-grid {
-    /* grid-template-columns: repeat(2, 1fr); */
-    margin: 2rem 0 0;
-  }
-  .ecomm-card {
-    max-width: 10rem;
-    min-width: 10rem;
-  }
-  .card-head {
-    padding: 0.2rem;
-  }
-  .card-head .image-badge-div .product-image {
-    height: 15rem;
+@media screen and (max-width: 850px) {
+  .filter-btn {
+    display: block;
+    background-color: var(--dark-blue-color);
+    color: #fff;
+    margin: 1rem 0;
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 780px) {
+  .card {
+    min-width: 99%;
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 750px) {
   .product-list-grid {
     grid-template-columns: repeat(2, 1fr);
     margin: 2rem 0 0;
   }
+  .card-head {
+    padding: 0.2rem;
+  }
+}
+@media screen and (max-width: 550px) {
   .ecomm-card {
     max-width: 10rem;
     min-width: 10rem;
@@ -113,7 +107,7 @@
     padding: 0.2rem;
   }
   .card-head .image-badge-div .product-image {
-    height: 15rem;
+    height: 13rem;
   }
 }
 @media screen and (max-width: 400px) {
@@ -131,7 +125,7 @@
   h3.product-heading {
     font-size: 0.8rem;
   }
-  .card-head .image-badge-div .product-image {
+  /* .card-head .image-badge-div .product-image {
     height: 15rem;
-  }
+  } */
 }

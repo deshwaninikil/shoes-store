@@ -12,7 +12,7 @@
 }
 
 .border-bottom {
-  border-bottom: 1px solid var(--light-gray-color);
+  border-bottom: 1px solid var(--primary-color);
   width: 100%;
 }
 
@@ -162,7 +162,7 @@
 }
 
 .price-detail-footer .footer-note {
-  color: var(--primary-color);
+  color: var(--light-green-color);
 }
 
 /*------------------ End Cart Pricing Stylings------------------------  */

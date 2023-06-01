@@ -19,9 +19,9 @@ export const ProductCard = ({ product }) => {
     rating,
     description,
     title,
-    category,
     discountedPrice,
     price,
+    in_stock,
   } = product;
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ export const ProductCard = ({ product }) => {
   return (
     <Link
       to={`/singleProduct/${product._id}`}
-      className="dp_row dp_rowdir_clmn card ecomm-card"
+      className={`dp_row dp_rowdir_clmn card ${in_stock ? "" : "ecomm-card"}`}
     >
       <div className="card-head">
         <div className="image-badge-div">

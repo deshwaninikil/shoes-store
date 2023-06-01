@@ -1,7 +1,7 @@
 .card {
   width: 100%;
   background-color: var(--white-color);
-  box-shadow: 0 0 9px 5px var(--light-gray-color);
+  box-shadow: 0 0 9px 5px var(--primary-color);
   transition: box-shadow 0.4s;
 }
 
@@ -33,8 +33,6 @@
 
 .card-body {
   position: relative;
-  /* display: flex;
-  flex-direction: column; */
   padding: 0.7rem;
 }
 
@@ -44,7 +42,7 @@
 
 .card-head .image-badge-div .product-image {
   width: 100%;
-  height: 20rem;
+  height: 15rem;
 }
 
 .card-head .image-badge-div .new-badge {
@@ -119,29 +117,39 @@
   color: var(--red-color);
 }
 
-/* .overlay-div {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(234, 234, 236, 0.6);
-}
-
-.overlay-div .overlay-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: 500;
-  padding: 1rem;
-  width: 88%;
-  background: #e5e7eb;
-} */
 .liked {
   color: var(--red-color);
   opacity: 1;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+.ecomm-card {
+  position: relative;
+}
+.ecomm-card:before {
+  content: "";
+  background-color: var(--black-color);
+  opacity: 0.5;
+  z-index: 5;
+  position: absolute;
+  cursor: not-allowed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ecomm-card:after {
+  content: "Out Of Stock";
+  color: var(--white-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  z-index: 10;
+  position: absolute;
+  cursor: not-allowed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

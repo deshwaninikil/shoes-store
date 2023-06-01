@@ -23,7 +23,7 @@ export const OrderSummary = () => {
   return (
     <div className="order-summary-section pdngtb5">
       {!order ? (
-        <div className="empty-order">
+        <div className="dp_row dp_rowdir_clmn aligncenter empty-order">
           {" "}
           <h3 className="empty-info">Oops! We lost your order :(</h3>{" "}
           <Link className="btn primary-btn-solid btn cartBtn" to="/product">
@@ -35,10 +35,10 @@ export const OrderSummary = () => {
           {" "}
           <h3 className="fs-1-5">Your order is placed successfully!</h3>
           <div className="order-info">
-            <div className="payment-info">
+            <div className="dp_row dp_rowdir_clmn payment-info">
               <span className="font-bold fs-1-25">Order Confirmed</span>
 
-              <div className="details">
+              <div className="dp_row dp_rowdir_clmn details">
                 <div>
                   <span className="font-bold mr-0-5">Payment Id:</span>
                   <span>{paymentId}</span>
@@ -53,15 +53,15 @@ export const OrderSummary = () => {
                 </div>
               </div>
             </div>
-            <div className="product-info">
+            <div className="dp_row dp_rowdir_clmn aligncenter product-info">
               <span className="font-bold fs-1-25">Products Ordered</span>
-              <div className="products-div">
+              <div className="dp_row dp_rowdir_clmn products-div">
                 {products?.map((product) => {
                   const { image, price, title, qty } = product;
                   return (
                     <div className="single-product" key={title}>
                       <img src={image} className="product-img" alt={title} />
-                      <div className="single-product-right">
+                      <div className="dp_row dp_rowdir_clmn single-product-right">
                         <div>{title}</div>
                         <div className="product-item">
                           <span className="font-bold">Price:</span>

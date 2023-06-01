@@ -133,4 +133,9 @@ span.password-icon {
     /* margin: 8.5rem 0 2.5rem; */
     padding: 1rem 2rem;
   }
+  .btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    /* margin-top: 0.5rem; */
+  }
 }

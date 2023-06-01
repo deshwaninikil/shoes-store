@@ -19,13 +19,14 @@ body {
 }
 
 :root {
-  --primary-color: #5cc7b2;
+  --primary-color: #f7f7f7;
   --light-primary-color: #ccfbf1;
   --dark-primary-color: #14b8a6;
   --secondary-color: #e5e5e5;
   --action-color: #fdba74;
   --dark-gray-color: #9ca3af;
-  --light-gray-color: #e5e7eb;
+  --light-gray-color: #f7f7f7;
+  --light-green-color: #5cc7b2;
   --black-color: #1f1f27;
   --wood-color: burlywood;
   --white-color: #fff;
@@ -361,6 +362,11 @@ hidden {
   display: block !important;
 }
 
+.clear-all-btn {
+  cursor: pointer;
+  color: var(--dark-blue-color);
+  text-transform: uppercase;
+}
 /*---------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------Start Media query Css------------------------------------------*/
 /*---------------------------------------------------------------------------------------------------------*/

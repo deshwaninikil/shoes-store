@@ -4,7 +4,7 @@
   top: 0;
   right: 0;
   left: 0;
-  background: #f7f7f7;
+  background: var(--primary-color);
   z-index: 999;
   padding: 0.8rem 0;
 }
@@ -45,7 +45,7 @@
   font-size: 1rem;
   padding: 0.5rem 0.75rem;
   transition: all 0.4s ease;
-  background-color: var(--light-gray-color);
+  background-color: var(--primary-color);
   color: var(--black-color);
   border: 1px solid var(--black-color);
   width: 100%;
@@ -63,7 +63,7 @@
 }
 .nav_explore_link .explore_btn {
   padding: 0 0.5rem;
-  color: var(--dark-blue-color);
+  color: var(--black-color);
 }
 
 .btn_secondary {
@@ -71,12 +71,11 @@
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   font-weight: 600;
-
-  border: 0.125rem solid var(--dark-blue-color);
-  color: var(--dark-blue-color);
+  border: 0.125rem solid var(--black-color);
+  color: var(--black-color);
 }
 .btn_secondary a {
-  color: var(--dark-blue-color);
+  color: var(--black-color);
 }
 .btn_icon {
   display: grid;

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import "./SingleProduct.css";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProductContext } from "../../context/ProductContext";
 import {
   getDiscountPercent,
@@ -15,9 +15,13 @@ export const SingleProduct = () => {
   const { productId } = useParams();
   const { productState, productDispatch } = useContext(ProductContext);
   const { token } = useAuth();
+  const navigate = useNavigate();
 
   const { products, cart, wishlist } = productState;
-  const currentProduct = products.find((product) => product._id === productId);
+  const currentProduct = products?.find((product) => product._id === productId);
+
+  console.log("currentProduct", currentProduct);
+  console.log("products", products);
 
   const inCart = cart.find((cartItem) => cartItem._id === currentProduct._id);
   const inWishlist = wishlist.find(
@@ -25,7 +29,7 @@ export const SingleProduct = () => {
   );
   return (
     <section className="dp_row justifycenter aligncenter pdngtb5 single-section">
-      <div className="single-card" key={currentProduct._id}>
+      <div className="single-card" key={currentProduct?._id}>
         <div className="left-part">
           <img
             src={currentProduct.image}
@@ -96,7 +100,7 @@ export const SingleProduct = () => {
             <button
               className="btn primary-btn-solid"
               onClick={() => {
-                addToCart(currentProduct, productDispatch, token);
+                addToCart(currentProduct, productDispatch, token, navigate);
               }}
             >
               Add to Cart
@@ -107,7 +111,12 @@ export const SingleProduct = () => {
             onClick={() => {
               inWishlist
                 ? removeFromWishlist(currentProduct._id, productDispatch, token)
-                : addToWishlist(currentProduct, productDispatch, token);
+                : addToWishlist(
+                    currentProduct,
+                    productDispatch,
+                    token,
+                    navigate
+                  );
             }}
           >
             <i className="fas fa-heart"></i>

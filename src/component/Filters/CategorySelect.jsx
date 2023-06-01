@@ -7,7 +7,7 @@ export const CategorySelect = () => {
 
   return (
     <div className="filter-category filter-type">
-      <div className="font-bold">Categories</div>
+      <div className="font-bold filten-main">Categories</div>
       <ul className="list stacked-list">
         {Object.entries(productState.selectedCategory).map((item) => {
           const [categoryName, isCategory] = item;

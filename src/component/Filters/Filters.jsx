@@ -8,7 +8,7 @@ import { SortBy } from "./SortBy";
 import { ACTION_TYPE } from "../../utils/constants";
 
 export const Filters = () => {
-  const { productState, productDispatch } = useContext(ProductContext);
+  const { productDispatch } = useContext(ProductContext);
   return (
     <div className="filter-section">
       <div className="filter-block">

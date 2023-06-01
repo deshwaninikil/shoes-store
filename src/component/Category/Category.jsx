@@ -38,7 +38,7 @@ export const Category = () => {
           <div className="dp_row dp_rowdir_clmn aligncenter dp_justifycontentcenter dp_flexwrap">
             <h2 className="heading highlight">Shop by Category</h2>
             <div className="category_mainConatiner">
-              {categoryData.map(({ _id, title, image, categoryName }) => (
+              {categoryData.map(({ title, image, categoryName }) => (
                 <div className="category_container" key={title}>
                   <div className="category_img">
                     <img src={image} />

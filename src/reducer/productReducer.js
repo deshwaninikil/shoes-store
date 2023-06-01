@@ -1,8 +1,7 @@
 import { ACTION_TYPE } from "../utils/constants";
+let categoryData = {};
 export const productReducer = (productState, action) => {
   const { type, payload } = action;
-
-  let categoryData = {};
 
   switch (type) {
     case ACTION_TYPE.INITIAL_DATA:

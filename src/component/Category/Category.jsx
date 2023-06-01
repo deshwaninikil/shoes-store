@@ -10,8 +10,8 @@ const arrow = ">>";
 export const Category = () => {
   const navigate = useNavigate();
   const [categoryData, setCategoryData] = useState([]);
-  const { productState, productDispatch } = useContext(ProductContext);
-  const { products } = productState;
+  const { productDispatch } = useContext(ProductContext);
+
   const fetchCategory = async () => {
     try {
       const { data } = await getAllCategoriesService();
@@ -41,7 +41,7 @@ export const Category = () => {
               {categoryData.map(({ title, image, categoryName }) => (
                 <div className="category_container" key={title}>
                   <div className="category_img">
-                    <img src={image} />
+                    <img src={image} alt={title} />
                   </div>
                   <Link to="/product">
                     <h3

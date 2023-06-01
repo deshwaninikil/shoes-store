@@ -20,7 +20,6 @@ export const Login = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(loginCred);
     loginHandler(loginCred.email, loginCred.password);
   };
 

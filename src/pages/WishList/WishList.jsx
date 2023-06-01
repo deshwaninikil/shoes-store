@@ -12,7 +12,6 @@ import { useAuth } from "../../context/AuthContext";
 
 export const WishListPage = () => {
   const { productState, productDispatch } = useContext(ProductContext);
-  console.log(productState.cart);
   const { wishlist, cart } = productState;
   const { token } = useAuth();
 

@@ -21,7 +21,6 @@ export const addToCart = async (
       const {
         data: { cart },
       } = await addItemToCartService({ product, token });
-      console.log("wishlist", cart);
       productDispatch({
         type: ADD_TO_CART,
         payload: cart,

@@ -63,8 +63,6 @@ export const OrderDetails = () => {
         };
 
         try {
-          console.log("response@@: ", response);
-          console.log("orderData: ", orderData);
           const { status } = await addOrders(orderData, token, orderDispatch);
           if (status === 201) {
             clearCart(cart, productDispatch, token);

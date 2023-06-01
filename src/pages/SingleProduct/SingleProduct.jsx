@@ -20,9 +20,6 @@ export const SingleProduct = () => {
   const { products, cart, wishlist } = productState;
   const currentProduct = products?.find((product) => product._id === productId);
 
-  console.log("currentProduct", currentProduct);
-  console.log("products", products);
-
   const inCart = cart.find((cartItem) => cartItem._id === currentProduct._id);
   const inWishlist = wishlist.find(
     (wishlistItem) => wishlistItem._id === currentProduct._id

@@ -12,7 +12,6 @@ export const useFilterHook = () => {
   const { productState } = useContext(ProductContext);
 
   let filteredData = [...productState.products];
-  console.log("filteredData1", filteredData);
 
   filteredData = getPriceRangeData(filteredData, productState.priceRange);
   filteredData = getCategoryData(filteredData, productState.selectedCategory);

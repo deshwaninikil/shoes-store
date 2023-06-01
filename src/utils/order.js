@@ -8,7 +8,6 @@ export const addOrders = async (orderData, token, orderDispatch) => {
       type: ACTION_TYPE.ADD_ORDERS,
       payload: response.data.order,
     });
-    console.log("reaponse: ", response);
     return response;
   } catch (error) {
     console.error(error);
@@ -24,7 +23,6 @@ export const getOrders = async (orderDispatch, token) => {
       type: ACTION_TYPE.GET_ORDERS,
       payload: order,
     });
-    console.log("order: ", order);
   } catch (error) {
     console.error(error);
   }

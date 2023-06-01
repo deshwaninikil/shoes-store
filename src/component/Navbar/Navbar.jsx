@@ -2,13 +2,6 @@ import { Link } from "react-router-dom";
 import navbarLogo from "../../logos/navbarLogo.png";
 
 import "./Navbar.css";
-// import {
-//   faHeart,
-//   faCartShopping,
-//   faMagnifyingGlass,
-// } from "@fortawesome/free-solid-svg-icons";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import { useAuth } from "../../context/AuthContext";
@@ -16,7 +9,7 @@ import { UserAvatar } from "../UserAvatar/UserAvatar";
 import { SearchBar } from "../SearchBar/SearchBar";
 
 export const Navbar = () => {
-  const { productState, productDispatch } = useContext(ProductContext);
+  const { productState } = useContext(ProductContext);
   const { cart, wishlist } = productState;
   const { token } = useAuth();
 

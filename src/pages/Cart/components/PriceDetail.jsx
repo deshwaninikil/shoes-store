@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { ProductContext } from "../../../context/ProductContext";
 
 export const PriceDetail = () => {
-  const { productState, productDispatch } = useContext(ProductContext);
+  const { productState } = useContext(ProductContext);
   const { cart } = productState;
   return (
     <div className="price-detail-section">

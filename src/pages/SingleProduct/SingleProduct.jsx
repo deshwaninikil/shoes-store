@@ -30,7 +30,7 @@ export const SingleProduct = () => {
         <div className="left-part">
           <img
             src={currentProduct.image}
-            alt="product"
+            alt={currentProduct.title}
             className="product-image"
           />
         </div>

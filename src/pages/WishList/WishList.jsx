@@ -40,7 +40,7 @@ export const WishListPage = () => {
                         <img
                           className="responsive-img"
                           src={product.image}
-                          alt="product"
+                          alt={product.title}
                         />
                       </div>
                       <Link

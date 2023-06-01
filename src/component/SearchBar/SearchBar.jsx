@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
 
 export const SearchBar = () => {
-  const { productState, productDispatch } = useContext(ProductContext);
+  const { productDispatch } = useContext(ProductContext);
   const navigate = useNavigate();
   const searchChangeHandler = (e) => {
     productDispatch({

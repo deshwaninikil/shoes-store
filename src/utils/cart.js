@@ -3,7 +3,6 @@ import {
   addItemToCartService,
   removeItemFromCartService,
   updateCartItemService,
-  removeItemFromWishlistService,
 } from "../services";
 import { removeFromWishlist } from "./wishlist";
 import { toast } from "react-toastify";

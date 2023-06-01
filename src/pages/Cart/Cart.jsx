@@ -6,7 +6,7 @@ import { PriceDetail } from "./components/PriceDetail";
 import { CartProduct } from "./components/CartProduct";
 
 export const CartPage = () => {
-  const { productState, productDispatch } = useContext(ProductContext);
+  const { productState } = useContext(ProductContext);
   const { cart } = productState;
   return (
     <section className="main-cart-section pdngtb5">

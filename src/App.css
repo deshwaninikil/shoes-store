@@ -250,7 +250,12 @@ hidden {
 .justifycenter {
   justify-content: center;
 }
-
+.justify-contentend {
+  justify-content: flex-end;
+}
+.justify-contentstart {
+  justify-content: flex-start;
+}
 .justify-contentspace {
   justify-content: space-evenly;
 }
@@ -343,7 +348,7 @@ hidden {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
 }
 /* Track */
 /* ::-webkit-scrollbar-track {
@@ -351,7 +356,7 @@ hidden {
 } */
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--black-color);
+  background: var(--light-blue-color);
 }
 /*----Header SMall End-----*/
 .mobview {

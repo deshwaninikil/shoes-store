@@ -39,20 +39,21 @@ export const Category = () => {
             <h2 className="heading highlight">Shop by Category</h2>
             <div className="category_mainConatiner">
               {categoryData.map(({ title, image, categoryName }) => (
-                <div className="category_container" key={title}>
-                  <div className="category_img">
-                    <img src={image} alt={title} />
-                  </div>
-                  <Link to="/product">
-                    <h3
-                      className="text-align category_title"
-                      onClick={() => showByCategory(categoryName)}
-                    >
+                <Link to="/product" key={title}>
+                  <div
+                    className="category_container"
+                    onClick={() => showByCategory(categoryName)}
+                  >
+                    <div className="category_img">
+                      <img src={image} alt={title} />
+                    </div>
+
+                    <h3 className="text-align category_title">
                       {title}
                       <strong>{arrow}</strong>
                     </h3>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

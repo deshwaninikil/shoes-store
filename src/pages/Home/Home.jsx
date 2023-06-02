@@ -8,6 +8,7 @@ export const HomePage = () => {
   const {
     productState: { loading },
   } = useContext(ProductContext);
+
   return (
     <>
       {loading ? (

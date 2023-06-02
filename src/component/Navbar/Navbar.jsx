@@ -26,7 +26,7 @@ export const Navbar = () => {
                     src={navbarLogo}
                     alt="HeaderLogo"
                   />
-                  <small>Shoes-Store</small>
+                  <small className="nav_btn">Shoes-Store</small>
                 </Link>
               </div>
             </div>
@@ -38,7 +38,7 @@ export const Navbar = () => {
           <div className="navConatinerRight">
             <ul className="dp_row aligncenter justify-contentspace btn_link">
               <li className="nav_explore_link">
-                <Link to="/product" className="explore_btn">
+                <Link to="/product" className="explore_btn nav_btn">
                   Explore
                 </Link>
               </li>
@@ -49,14 +49,16 @@ export const Navbar = () => {
                   </Link>
                 ) : (
                   <button className="btn_secondary">
-                    <Link to="/login">Login</Link>
+                    <Link to="/login" className="nav_btn">
+                      Login
+                    </Link>
                   </button>
                 )}
               </li>
               <li>
                 <div className="btn_icon">
                   <div className="btn_icon_propery">
-                    <Link to="/cart">
+                    <Link to="/cart" className="nav_btn">
                       <span className="badge-wrapper">
                         <i className="fas fa-shopping-cart btn_icon_navlink"></i>
                         {cart.length > 0 && (
@@ -72,7 +74,7 @@ export const Navbar = () => {
               <li>
                 <div className="btn_icon">
                   <div className="btn_icon_propery">
-                    <Link to="/wishlist">
+                    <Link to="/wishlist" className="nav_btn">
                       <span className="badge-wrapper">
                         <i className="fas fa-heart btn_icon_navlink"></i>
                         {wishlist.length > 0 && (

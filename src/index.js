@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ProductProvider } from "./context/ProductContext";
 import { AuthProvider } from "./context/AuthContext";
 import { OrderProvider } from "./context/OrderContext";
+import { AddressProvider } from "./context/AddressContext";
 
 // Call make Server
 makeServer();
@@ -17,7 +18,9 @@ createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <OrderProvider>
           <ProductProvider>
-            <App />
+            <AddressProvider>
+              <App />
+            </AddressProvider>
           </ProductProvider>
         </OrderProvider>
       </AuthProvider>

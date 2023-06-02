@@ -65,6 +65,10 @@
   padding: 0 0.5rem;
   color: var(--black-color);
 }
+.nav_btn:hover,
+.nav_btn:focus {
+  color: var(--light-blue-color) !important;
+}
 
 .btn_secondary {
   border-radius: 0.375rem;

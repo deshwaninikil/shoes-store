@@ -1,9 +1,10 @@
-import { createContext } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 export const AddressContext = createContext();
 
 const defaultAddress = [
   {
+    id: 11,
     name: "Nikhil Deshwani",
     mobile: 9099203274,
     emailId: "nikhil@gmail.com",
@@ -12,10 +13,28 @@ const defaultAddress = [
     address: "Sector 62",
   },
 ];
-export const AddressProvider = ({ Children }) => {
+
+const addressReducer = (addressState, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case "DELETE_ADDRESS":
+      return addressState.filter((address) => address.id !== payload.addressId);
+    default:
+      return addressState;
+  }
+};
+
+export const AddressProvider = ({ children }) => {
+  const [addressState, addressDispatch] = useReducer(
+    addressReducer,
+    defaultAddress
+  );
+
   return (
-    <AddressContext.Provider value={{ defaultAddress }}>
-      {Children}
+    <AddressContext.Provider value={{ addressState, addressDispatch }}>
+      {children}
     </AddressContext.Provider>
   );
 };
+
+export const useAddress = () => useContext(AddressContext);

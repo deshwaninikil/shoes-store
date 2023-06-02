@@ -6,6 +6,9 @@
   border: 5px solid var(--secondary-color);
   margin-right: 3rem;
 }
+.category_container:hover {
+  border: 5px solid var(--light-blue-color);
+}
 .category_title {
   background-color: var(--black-color);
   padding: 0.4rem;

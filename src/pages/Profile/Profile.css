@@ -6,7 +6,8 @@
 .profile-container {
   margin: 0 auto;
   box-shadow: 0 0 4px 0px var(--dark-gray-color);
-  max-width: 25rem;
+  min-width: 30%;
+  max-width: 30%;
 }
 
 .profile-section .profile-header {
@@ -38,9 +39,98 @@
   margin: 1rem;
 }
 
+.tab-container {
+  /* display: flex;
+  justify-content: space-between; */
+  background-color: #f5f5f5;
+}
+
+.tab {
+  flex: 1;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+  background-color: #eaeaea;
+}
+
+.tab.active {
+  background-color: #ddd;
+  color: var(--black-color);
+}
+
+.tab-content {
+  padding: 1rem;
+}
+.address-tab {
+  padding: 1rem;
+}
+
+.address-item {
+  /* background-color: #f5f5f5;
+  padding: 1rem;
+  margin-bottom: 1rem; */
+}
+
+.address-item h4 {
+  margin-bottom: 0.5rem;
+}
+
+.address-actions {
+  /* display: flex;
+  justify-content: flex-end; */
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.delete-btn {
+  color: var(--red-color);
+  outline: var(--red-color) solid 1px;
+}
+
+.add-address-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1000px) {
   .profile-section {
     margin-top: 9rem;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .profile-container {
+    margin: 0 auto;
+    box-shadow: 0 0 4px 0px var(--dark-gray-color);
+    min-width: 90%;
+    max-width: 90%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .address-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .address-actions {
+    justify-content: flex-start;
+  }
+
+  .profile-container {
+    margin: 0 auto;
+    box-shadow: 0 0 4px 0px var(--dark-gray-color);
+    min-width: 90%;
+    max-width: 90%;
   }
 }
 @media only screen and (max-width: 400px) {

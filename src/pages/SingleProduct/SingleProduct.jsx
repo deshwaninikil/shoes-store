@@ -29,18 +29,28 @@ export const SingleProduct = () => {
     (wishlistItem) => wishlistItem._id === currentProduct._id
   );
 
-  const fetchCurrentProducts = async () => {
-    try {
-      setLoading(true);
-      const { data } = await axios.get(`/api/products/${productId}`);
-      setLoading(false);
-      setSingleProductData(data.product);
-    } catch (error) {
-      console.log("Error in fetching products", error);
-    }
-  };
+  // const fetchCurrentProducts = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const { data } = await axios.get(`/api/products/${productId}`);
+  //     setLoading(false);
+  //     setSingleProductData(data.product);
+  //   } catch (error) {
+  //     console.log("Error in fetching products", error);
+  //   }
+  // };
 
   useEffect(() => {
+    const fetchCurrentProducts = async () => {
+      try {
+        setLoading(true);
+        const { data } = await axios.get(`/api/products/${productId}`);
+        setLoading(false);
+        setSingleProductData(data.product);
+      } catch (error) {
+        console.log("Error in fetching products", error);
+      }
+    };
     fetchCurrentProducts();
   }, [productId]);
 

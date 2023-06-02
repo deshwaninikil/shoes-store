@@ -42,7 +42,7 @@ export const SingleProduct = () => {
 
   useEffect(() => {
     fetchCurrentProducts();
-  }, []);
+  }, [productId]);
 
   currentProduct = currentProduct ?? singleProductData;
   return (

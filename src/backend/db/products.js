@@ -309,7 +309,7 @@ export const products = [
     price: "1599",
     discountedPrice: "780",
     reviews: "3.5k",
-    in_stock: false,
+    in_stock: true,
   },
   {
     _id: "27ddd577-6566-41a5-a833-ad2534bf9417",

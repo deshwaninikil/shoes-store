@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import navbarLogo from "../../logos/navbarLogo.png";
+import navbarLogo from "../../assets/navbarLogo.png";
 
 import "./Navbar.css";
 import { useContext } from "react";

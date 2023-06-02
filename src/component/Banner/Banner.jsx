@@ -11,11 +11,11 @@ export const Banner = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((currentImageIndex + 1) % images.length);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentImageIndex, images.length]);
+  }, []);
 
   return (
     <section className="carousel">

@@ -13,7 +13,7 @@ export const Login = () => {
 
   const guestLoginCred = {
     email: "nikhil@gmail.com",
-    password: "nikhik@1995",
+    password: "nikhil@1995",
   };
 
   const { showPass, togglePassword } = useShowPassword();

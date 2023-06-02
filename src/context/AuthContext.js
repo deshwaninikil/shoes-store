@@ -34,9 +34,8 @@ export const AuthProvider = ({ children }) => {
         setAuthError("");
       }
     } catch (error) {
-      console.error(error);
-
       setAuthError("The credentials you entered are invalid");
+      console.error(error);
     }
   };
 

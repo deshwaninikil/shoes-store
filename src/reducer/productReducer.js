@@ -96,6 +96,12 @@ export const productReducer = (productState, action) => {
         searchText: payload,
       };
 
+    case ACTION_TYPE.SET_LOADING:
+      return {
+        ...productState,
+        loading: payload,
+      };
+
     default:
       return productState;
   }

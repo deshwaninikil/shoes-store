@@ -32,11 +32,18 @@ export const ProductProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  useEffect(() => {
-    fetchCategory();
+    (async () => {
+      productDispatch({
+        type: ACTION_TYPE.SET_LOADING,
+        payload: true,
+      });
+      await fetchProducts();
+      await fetchCategory();
+      productDispatch({
+        type: ACTION_TYPE.SET_LOADING,
+        payload: false,
+      });
+    })();
   }, []);
 
   const productInitialState = {
@@ -48,6 +55,7 @@ export const ProductProvider = ({ children }) => {
     sortBy: "",
     rating: "",
     searchText: "",
+    loading: false,
   };
   const [productState, productDispatch] = useReducer(
     productReducer,

@@ -91,8 +91,9 @@ export const OrderDetails = () => {
     <div className="dp_row dp_rowdir_clmn order-section">
       <div className="order-summary order-col">
         <h3>Order Summary</h3>
+
         <div className="dp_row dp_rowdir_clmn  order-content">
-          <div className="order-heading order-item">
+          <div className="dp_row dp_justifycontentspcbet order-heading order-item">
             <span className="font-bold">Item</span>
             <span className="font-bold">Qty</span>
           </div>
@@ -133,7 +134,7 @@ export const OrderDetails = () => {
         </div>
       </div>
       <button
-        className="order-button btn primary-btn-solid font-bold"
+        className="btn primary-btn-solid order-button"
         onClick={displayRazorpay}
       >
         Place Order

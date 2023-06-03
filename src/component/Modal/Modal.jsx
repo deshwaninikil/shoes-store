@@ -20,7 +20,7 @@ export const Modal = ({ setOpenModal }) => {
                 setOpenModal(false);
               }}
             >
-              X
+              <i className="fa-solid fa-x"></i>
             </button>
           </div>
           <div>

@@ -2,19 +2,20 @@ import { useState } from "react";
 import { UserAvatar } from "../../component/UserAvatar/UserAvatar";
 import { useAddress } from "../../context/AddressContext";
 import { useAuth } from "../../context/AuthContext";
-
 import "./Profile.css";
+import { AddressModal } from "../../component/AddressModal/AddressModal";
 
 export const Profile = () => {
   const { loginUser, logoutHandler } = useAuth();
   const { addressState, addressDispatch } = useAddress();
   const defaultAddress = addressState;
   const [activeTab, setActiveTab] = useState("profile");
+  const [addressModalOpen, setAddressModalOpen] = useState(false);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
-  // console.log(defaultAddress);
+
   return (
     <>
       <section className="profile-section pdngtb5">
@@ -65,10 +66,21 @@ export const Profile = () => {
           ) : (
             <div className="dp_row justify-contentstart tab-content">
               <div className="address-tab">
-                <button className="btn add-address-btn">Add New Address</button>
+                <button
+                  className="btn add-address-btn"
+                  onClick={() => {
+                    setAddressModalOpen(true);
+                  }}
+                >
+                  Add New Address
+                </button>
+                {addressModalOpen && (
+                  <AddressModal setOpenModal={setAddressModalOpen} />
+                )}
                 {defaultAddress && defaultAddress.length > 0 ? (
-                  defaultAddress.map((address, id) => (
-                    <div className="address-item" key={id}>
+                  defaultAddress.map((address, index) => (
+                    <div className="address-item" key={address.id}>
+                      {console.log("index: ", index)}
                       <h4>{address.name}</h4>
                       <p>{address.address}</p>
                       <p>{address.city}</p>
@@ -76,7 +88,17 @@ export const Profile = () => {
                       <p>Mobile: {address.mobile}</p>
                       <p>Email: {address.emailId}</p>
                       <div className="dp_row justify-contentstart address-actions">
-                        <button className="btn cartBtn">Edit</button>
+                        <button
+                          className="btn cartBtn"
+                          onClick={() => {
+                            setAddressModalOpen(true);
+                          }}
+                        >
+                          Edit
+                        </button>
+                        {addressModalOpen && (
+                          <AddressModal setOpenModal={setAddressModalOpen} />
+                        )}
                         <button
                           className="btn cartBtn delete-btn"
                           onClick={() =>
@@ -89,6 +111,9 @@ export const Profile = () => {
                           Delete
                         </button>
                       </div>
+                      {index >= 0 && index !== defaultAddress.length - 1 && (
+                        <div className="border-bottom margin-border"></div>
+                      )}
                     </div>
                   ))
                 ) : (

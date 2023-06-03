@@ -40,8 +40,6 @@
 }
 
 .tab-container {
-  /* display: flex;
-  justify-content: space-between; */
   background-color: #f5f5f5;
 }
 
@@ -72,9 +70,6 @@
 }
 
 .address-item {
-  /* background-color: #f5f5f5;
-  padding: 1rem;
-  margin-bottom: 1rem; */
 }
 
 .address-item h4 {
@@ -82,8 +77,6 @@
 }
 
 .address-actions {
-  /* display: flex;
-  justify-content: flex-end; */
   gap: 0.5rem;
   margin-top: 0.8rem;
 }
@@ -94,12 +87,13 @@
 }
 
 .add-address-btn {
-  background-color: #28a745;
+  background-color: var(--dark-blue-color);
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
+  width: 11rem;
 }
 
 @media only screen and (max-width: 1000px) {

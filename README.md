@@ -38,8 +38,6 @@ $ npm start
 - Toast and Loaders
 - Responsive
 
-...tune in for more features
-
 ## Built with -
 
 - React JS

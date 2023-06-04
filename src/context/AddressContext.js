@@ -30,9 +30,11 @@ const addressReducer = (addressState, action) => {
 
     case "RESET_ADDRESS":
       return defaultAddress;
+
     case "EDIT_ADDRESS":
+      const { address: updatedAddress } = payload;
       return addressState.map((a) =>
-        a.id === address.id ? { ...a, ...payload.address } : a
+        a.id === updatedAddress.id ? { ...a, ...updatedAddress } : a
       );
     default:
       return addressState;

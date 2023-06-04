@@ -83,6 +83,7 @@ export const Profile = () => {
                     addressData={null}
                   />
                 )}
+
                 {defaultAddress && defaultAddress.length > 0 ? (
                   defaultAddress.map((address, index) => (
                     <div className="address-item" key={address.id}>
@@ -102,7 +103,7 @@ export const Profile = () => {
                         >
                           Edit
                         </button>
-                        {addressModalOpen && (
+                        {addressToEdit && addressModalOpen && (
                           <AddressModal
                             setOpenModal={setAddressModalOpen}
                             isEdit={true}

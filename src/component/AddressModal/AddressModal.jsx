@@ -33,7 +33,7 @@ export const AddressModal = ({ setOpenModal, isEdit, addressData }) => {
 
     // Mobile number validation
     const mobileRegex = /^[0-9]{10}$/;
-    if (!mobile.match(mobileRegex)) {
+    if (!String(mobile).match(mobileRegex)) {
       newErrors.mobile = "Invalid mobile number";
     }
 
@@ -43,7 +43,7 @@ export const AddressModal = ({ setOpenModal, isEdit, addressData }) => {
 
     // Pincode validation
     const pincodeRegex = /^[0-9]{6}$/;
-    if (!pincode.match(pincodeRegex)) {
+    if (!String(pincode).match(pincodeRegex)) {
       newErrors.pincode = "Invalid pincode";
     }
 
@@ -53,7 +53,7 @@ export const AddressModal = ({ setOpenModal, isEdit, addressData }) => {
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.match(emailRegex)) {
+    if (!String(email).match(emailRegex)) {
       newErrors.email = "Invalid email ID.";
     }
 
@@ -62,23 +62,41 @@ export const AddressModal = ({ setOpenModal, isEdit, addressData }) => {
       return;
     }
 
-    const newAddress = {
-      id: isEdit ? addressData.id : defaultAddress.length + 1,
-      name,
-      mobile,
-      address,
-      pincode,
-      city,
-      email,
-    };
+    if (isEdit) {
+      const updatedAddress = {
+        id: addressData.id,
+        name,
+        mobile,
+        address,
+        pincode,
+        city,
+        email,
+      };
 
-    addressDispatch({
-      type: isEdit ? "EDIT_ADDRESS" : "ADD_ADDRESS",
-      payload: { address: newAddress },
-    });
+      addressDispatch({
+        type: "EDIT_ADDRESS",
+        payload: { address: updatedAddress },
+      });
+    } else {
+      const newAddress = {
+        id: defaultAddress.length + 1,
+        name,
+        mobile,
+        address,
+        pincode,
+        city,
+        email,
+      };
+
+      addressDispatch({
+        type: "ADD_ADDRESS",
+        payload: { address: newAddress },
+      });
+    }
 
     setOpenModal(false);
   };
+
   const handleResetAddress = () => {
     addressDispatch({ type: "RESET_ADDRESS" });
     setName("");

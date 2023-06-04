@@ -9,7 +9,6 @@ import {
   totalPrice,
   totalDiscount,
   totalAmount,
-  clearCart,
   addOrders,
   clearCartAfterOrderPlaced,
 } from "../../utils";

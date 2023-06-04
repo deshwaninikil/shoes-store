@@ -13,6 +13,9 @@ export const Checkout = () => {
   const handleAddressSelect = (address) => {
     setSelectedAddress(address);
   };
+  const handleAddAddress = () => {
+    setAddressModalOpen(true);
+  };
   return (
     <section className="main-checkout-section pdngtb5">
       <div className="dp_row justify-contentspaceAround checkout-div">
@@ -23,14 +26,16 @@ export const Checkout = () => {
               <div className="dp_row justify-contentstart address-actions">
                 <button
                   className="btn add-address-btn"
-                  onClick={() => {
-                    setAddressModalOpen(true);
-                  }}
+                  onClick={handleAddAddress}
                 >
                   Add New Address
                 </button>
                 {addressModalOpen && (
-                  <AddressModal setOpenModal={setAddressModalOpen} />
+                  <AddressModal
+                    setOpenModal={setAddressModalOpen}
+                    isEdit={false}
+                    addressData={null}
+                  />
                 )}
               </div>
               {defaultAddress && defaultAddress.length > 0 ? (

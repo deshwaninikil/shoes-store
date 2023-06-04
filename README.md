@@ -30,9 +30,9 @@ $ npm start
 - Checkout page
 - Payment gateway integration
 - Authentication:
-  User Signup
-  User Login
-  logout page
+   - User Signup
+   - User Login
+   - logout page
 - Error Page
 - Toast and Loaders
 - Responsive

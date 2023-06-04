@@ -4,6 +4,8 @@ export {
   updateCartItem,
   moveToCart,
   clearCart,
+  removeFromCartAfterOrderPlaced,
+  clearCartAfterOrderPlaced,
 } from "./cart";
 export { addToWishlist, moveToWishlist, removeFromWishlist } from "./wishlist";
 export {

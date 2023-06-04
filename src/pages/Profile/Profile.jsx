@@ -11,11 +11,15 @@ export const Profile = () => {
   const defaultAddress = addressState;
   const [activeTab, setActiveTab] = useState("profile");
   const [addressModalOpen, setAddressModalOpen] = useState(false);
+  const [addressToEdit, setAddressToEdit] = useState(null);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
-
+  const handleAddAddress = () => {
+    setAddressToEdit(null);
+    setAddressModalOpen(true);
+  };
   return (
     <>
       <section className="profile-section pdngtb5">
@@ -68,36 +72,42 @@ export const Profile = () => {
               <div className="address-tab">
                 <button
                   className="btn add-address-btn"
-                  onClick={() => {
-                    setAddressModalOpen(true);
-                  }}
+                  onClick={handleAddAddress}
                 >
                   Add New Address
                 </button>
                 {addressModalOpen && (
-                  <AddressModal setOpenModal={setAddressModalOpen} />
+                  <AddressModal
+                    setOpenModal={setAddressModalOpen}
+                    isEdit={false}
+                    addressData={null}
+                  />
                 )}
                 {defaultAddress && defaultAddress.length > 0 ? (
                   defaultAddress.map((address, index) => (
                     <div className="address-item" key={address.id}>
-                      {console.log("index: ", index)}
                       <h4>{address.name}</h4>
                       <p>{address.address}</p>
                       <p>{address.city}</p>
                       <p>{address.pincode}</p>
                       <p>Mobile: {address.mobile}</p>
-                      <p>Email: {address.emailId}</p>
+                      <p>Email: {address.email}</p>
                       <div className="dp_row justify-contentstart address-actions">
                         <button
                           className="btn cartBtn"
                           onClick={() => {
+                            setAddressToEdit(address);
                             setAddressModalOpen(true);
                           }}
                         >
                           Edit
                         </button>
                         {addressModalOpen && (
-                          <AddressModal setOpenModal={setAddressModalOpen} />
+                          <AddressModal
+                            setOpenModal={setAddressModalOpen}
+                            isEdit={true}
+                            addressData={addressToEdit}
+                          />
                         )}
                         <button
                           className="btn cartBtn delete-btn"

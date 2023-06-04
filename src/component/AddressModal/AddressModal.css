@@ -64,7 +64,13 @@
   border: 1px solid #cacaca;
   border-radius: 10px;
 }
-
+span.error {
+  color: red;
+  position: relative;
+  font-size: 10px;
+  left: -14px;
+  top: 2px;
+}
 @media screen and (max-width: 850px) {
   .flexclmn_onlyMob {
     flex-direction: column;
@@ -72,5 +78,7 @@
   .addressModalContainer {
     min-width: 80%;
     max-width: 80%;
+    min-height: fit-content;
+    max-height: 60%;
   }
 }

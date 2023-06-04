@@ -83,3 +83,32 @@ export const clearCart = (cart, productDispatch, token) => {
     removeFromCart(product.productId, productDispatch, token, true)
   );
 };
+
+export const removeFromCartAfterOrderPlaced = async (
+  productId,
+  productDispatch,
+  token
+) => {
+  try {
+    const {
+      data: { cart },
+    } = await removeItemFromCartService({ productId, token });
+    productDispatch({
+      type: REMOVE_FROM_CART,
+      payload: cart,
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const clearCartAfterOrderPlaced = (cart, productDispatch, token) => {
+  cart.map((product) =>
+    removeFromCartAfterOrderPlaced(
+      product.productId,
+      productDispatch,
+      token,
+      false
+    )
+  );
+};

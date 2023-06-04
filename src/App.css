@@ -18,6 +18,12 @@ body {
   box-sizing: border-box;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 :root {
   --primary-color: #f7f7f7;
   --secondary-color: #e5e5e5;
@@ -39,14 +45,6 @@ body {
   --dark-blue-color: blue;
   --green-color: #4ade80;
   --light-green-color: #dcfce7;
-  --font-1: 0.5rem;
-  --font-2: 0.75rem;
-  --font-3: 0.85rem;
-  --font-4: 1rem;
-  --font-5: 1.25rem;
-  --font-6: 1.5rem;
-  --font-7: 1.75rem;
-  --font-8: 2rem;
 }
 
 a:focus,
@@ -347,13 +345,9 @@ hidden {
 ::-webkit-scrollbar {
   width: 8px;
 }
-/* Track */
-/* ::-webkit-scrollbar-track {
-  background: #f1f120;
-} */
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: var(--light-blue-color);
+  background: var(--black-color);
 }
 /*----Header SMall End-----*/
 .mobview {

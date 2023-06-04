@@ -7,7 +7,7 @@ const defaultAddress = [
     id: 11,
     name: "Nikhil Deshwani",
     mobile: 9099203274,
-    emailId: "nikhil@gmail.com",
+    email: "nikhil@gmail.com",
     pincode: 201002,
     city: "Noida",
     address: "Sector 62",
@@ -19,6 +19,21 @@ const addressReducer = (addressState, action) => {
   switch (type) {
     case "DELETE_ADDRESS":
       return addressState.filter((address) => address.id !== payload.addressId);
+    case "ADD_ADDRESS":
+      const { address } = payload;
+      const existingAddress = addressState.find((a) => a.id === address.id);
+      if (existingAddress) {
+        return addressState;
+      } else {
+        return [...addressState, address];
+      }
+
+    case "RESET_ADDRESS":
+      return defaultAddress;
+    case "EDIT_ADDRESS":
+      return addressState.map((a) =>
+        a.id === address.id ? { ...a, ...payload.address } : a
+      );
     default:
       return addressState;
   }

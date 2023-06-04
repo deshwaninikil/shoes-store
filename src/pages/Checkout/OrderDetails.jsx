@@ -11,9 +11,10 @@ import {
   totalAmount,
   clearCart,
   addOrders,
+  clearCartAfterOrderPlaced,
 } from "../../utils";
 
-export const OrderDetails = () => {
+export const OrderDetails = ({ selectedAddress }) => {
   const { productState, productDispatch } = useContext(ProductContext);
   const { orderDispatch } = useContext(OrderContext);
   const { cart } = productState;
@@ -47,6 +48,10 @@ export const OrderDetails = () => {
       alert("Razorpay SDK failed to load, check your connection");
       return;
     }
+    if (!selectedAddress) {
+      alert("Please select an address before placing the order.");
+      return;
+    }
     const options = {
       key: "rzp_test_kjgU84fmtvBu4U",
       amount: grandTotal * 100,
@@ -65,7 +70,8 @@ export const OrderDetails = () => {
         try {
           const { status } = await addOrders(orderData, token, orderDispatch);
           if (status === 201) {
-            clearCart(cart, productDispatch, token);
+            // clearCart(cart, productDispatch, token);
+            clearCartAfterOrderPlaced(cart, productDispatch, token);
             navigate(`/order-summary/${orderData.orderId}`);
           }
         } catch (error) {

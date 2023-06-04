@@ -66,7 +66,7 @@ export const Checkout = () => {
           </div>
         </div>
 
-        <OrderDetails />
+        <OrderDetails selectedAddress={selectedAddress} />
       </div>
     </section>
   );

@@ -3,7 +3,7 @@ import page404 from "../../assets/page404.png";
 
 import "./PageNotFound.css";
 
-const PageNotFound = () => {
+export const PageNotFound = () => {
   return (
     <div className="dp_row dp_rowdir_clmn aligncenter justifycenter pdngtb5 notFound-container">
       <img src={page404} alt="404error" />
@@ -16,5 +16,3 @@ const PageNotFound = () => {
     </div>
   );
 };
-
-export { PageNotFound };

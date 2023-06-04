@@ -37,7 +37,6 @@ export const addToWishlist = async (
 export const moveToWishlist = (product, productDispatch, token) => {
   addToWishlist(product, productDispatch, token, "", "MOVE_TO_WISHLIST");
   removeFromCart(product._id, productDispatch, token, "MOVE_TO_WISHLIST");
-  // toast.warning("Deleted from Wishlist!");
 };
 
 export const removeFromWishlist = async (

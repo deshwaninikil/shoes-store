@@ -4,12 +4,14 @@ You will find the world’s great shoes here, it is an e-commerce site with wide
 
 ## Demo Video
 
-![](https://www.loom.com/share/ee3d199d7ec9465fb782367156bc9bf3)
+https://github.com/deshwaninikil/shoes-store/assets/79966144/db4c2d31-d787-4f19-a187-632d17a12e4c
+
 
 ## How to install and run locally ?
 
 ```
 $ git clone https://github.com/deshwaninikil/shoes-store.git
+$ cd  shoes-store
 $ npm install
 $ npm start
 
@@ -29,14 +31,12 @@ $ npm start
 - Checkout page
 - Payment gateway integration
 - Authentication:
-  User Signup
-  User Login
-  logout page
+   - User Signup
+   - User Login
+   - Logout Page
 - Error Page
 - Toast and Loaders
 - Responsive
-
-...tune in for more features
 
 ## Built with -
 

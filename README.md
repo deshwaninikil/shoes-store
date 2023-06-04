@@ -4,7 +4,8 @@ You will find the world’s great shoes here, it is an e-commerce site with wide
 
 ## Demo Video
 
-![](https://www.loom.com/share/ee3d199d7ec9465fb782367156bc9bf3)
+https://github.com/deshwaninikil/shoes-store/assets/79966144/3b2c75e5-371f-4822-b6e8-52c9abe3aca4
+
 
 ## How to install and run locally ?
 

@@ -4,7 +4,7 @@ You will find the world’s great shoes here, it is an e-commerce site with wide
 
 ## Demo Video
 
-![](https://github.com/AnjaliDeshwani/winsome-books-store/blob/dev/src/assets/Ecomm-demo.gif)
+![](https://www.loom.com/share/ee3d199d7ec9465fb782367156bc9bf3)
 
 ## How to install and run locally ?
 

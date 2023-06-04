@@ -34,11 +34,6 @@
   margin-bottom: 1rem;
 }
 
-.order-item,
-.price-item {
-  /* display: flex;
-  justify-content: space-between; */
-}
 .addressCheckbox-item {
   padding-top: 0;
 }

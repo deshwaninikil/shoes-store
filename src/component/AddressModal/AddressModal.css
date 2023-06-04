@@ -16,7 +16,7 @@
   top: 10rem;
   min-width: 50%;
   max-width: 50%;
-  height: 60%;
+  height: fit-content;
   overflow-x: auto;
   border-radius: 12px;
   background-color: white;

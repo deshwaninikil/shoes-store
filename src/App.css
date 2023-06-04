@@ -20,8 +20,6 @@ body {
 
 :root {
   --primary-color: #f7f7f7;
-  --light-primary-color: #ccfbf1;
-  --dark-primary-color: #14b8a6;
   --secondary-color: #e5e5e5;
   --action-color: #fdba74;
   --dark-gray-color: #9ca3af;
@@ -37,7 +35,6 @@ body {
   --light-lime-color: #fefce8;
   --bright-yellow-color: #fdd835;
   --blue-color: #38bdf8;
-  /* --light-blue-color: #e0f2fe; */
   --light-blue-color: #2057a8;
   --dark-blue-color: blue;
   --green-color: #4ade80;

@@ -36,9 +36,9 @@ export const AddressModal = ({ setOpenModal }) => {
           </div>
           <div>
             <div className="filter-main dp_row dp_justifycontentspcbet">
-              <div className="font-bold">Add New Address</div>
+              <h3 className="font-bold">Add New Address</h3>
             </div>
-            <div className="dp_row">
+            <div className="dp_row flexclmn_onlyMob">
               <div className="input-row">
                 <label>Name:</label>
                 <input
@@ -56,7 +56,7 @@ export const AddressModal = ({ setOpenModal }) => {
                 />
               </div>
             </div>
-            <div className="dp_row">
+            <div className="dp_row flexclmn_onlyMob">
               <div className="input-row">
                 <label>Address:</label>
                 <input
@@ -74,7 +74,7 @@ export const AddressModal = ({ setOpenModal }) => {
                 />
               </div>
             </div>
-            <div className="dp_row">
+            <div className="dp_row flexclmn_onlyMob">
               <div className="input-row">
                 <label>City:</label>
                 <input
@@ -92,9 +92,13 @@ export const AddressModal = ({ setOpenModal }) => {
                 />
               </div>
             </div>
-            <div className="button-row">
-              <button onClick={handleAdd}>Add</button>
-              <button onClick={handleReset}>Reset</button>
+            <div className="dp_row justify-contentstart address-actions">
+              <button className="btn cartBtn" onClick={handleAdd}>
+                Add
+              </button>
+              <button className="btn cartBtn delete-btn" onClick={handleReset}>
+                Reset
+              </button>
             </div>
           </div>
         </div>

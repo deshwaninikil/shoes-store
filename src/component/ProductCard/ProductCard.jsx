@@ -27,12 +27,17 @@ export const ProductCard = ({ product }) => {
 
   const inWishlist = wishlist.find((wishlistItem) => wishlistItem._id === _id);
 
+  const preventClick = (e) => {
+    e.preventDefault();
+  };
+
   const inCart = cart.find((cartItem) => cartItem._id === _id);
   const { token } = useAuth();
   return (
     <Link
       to={`/singleProduct/${product._id}`}
       className={`dp_row dp_rowdir_clmn card ${in_stock ? "" : "ecomm-card"}`}
+      onClick={in_stock ? "" : preventClick}
     >
       <div className="card-head">
         <div className="image-badge-div">

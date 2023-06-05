@@ -54,6 +54,7 @@
 
 .auth_items .input_txt {
   border: 1px solid var(--dark-gray-color);
+  border-radius: 10px;
 }
 
 .auth_body .action_btn {
@@ -122,11 +123,14 @@
   position: relative;
 }
 span.password-icon {
-  bottom: 12px;
+  bottom: 10px;
   cursor: pointer;
   margin-right: 5px;
   position: absolute;
   right: 5px;
+}
+input.input_txt:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
 }
 @media screen and (max-width: 1000px) {
   .auth_section {

@@ -13,13 +13,13 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   const loginHandler = async (email, password) => {
+    setLoading(true);
     try {
-      setLoading(true);
       const { data, status } = await loginService({
         email,
         password,
       });
-      setLoading(false);
+
       if (status === 201 || status === 200) {
         localStorage.setItem(
           "loginDetails",
@@ -33,29 +33,36 @@ export const AuthProvider = ({ children }) => {
 
         setAuthError("");
       }
+      setLoading(false);
     } catch (error) {
       setAuthError("The credentials you entered are invalid");
       console.error(error);
+      setLoading(false);
     }
   };
 
   const logoutHandler = () => {
+    setLoading(true);
     localStorage.removeItem("loginDetails");
     setToken("");
     setLoginUser("");
-    navigate("/");
+
+    setTimeout(() => {
+      navigate("/");
+      setLoading(false);
+    }, 1000);
   };
 
   const signUpHandler = async (firstName, lastName, email, password) => {
+    setLoading(true);
     try {
-      setLoading(true);
       const { data, status } = await singupService({
         firstName,
         lastName,
         email,
         password,
       });
-      setLoading(false);
+
       if (status === 201) {
         localStorage.setItem(
           "loginDetails",
@@ -68,9 +75,11 @@ export const AuthProvider = ({ children }) => {
         setLoginUser(data.createdUser);
         setAuthError("");
       }
+      setLoading(false);
     } catch (error) {
       console.error(error);
       setAuthError("Email Already Exists.");
+      setLoading(false);
     }
   };
 

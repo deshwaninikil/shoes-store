@@ -51,13 +51,17 @@ export const Profile = () => {
                   <UserAvatar />
                   <div className="dp_row dp_rowdir_clmn profile-details">
                     <div className="dp_row profile-item">
-                      <span className="font-bold">Name :</span>
+                      <span className="font-bold profileSubHeading">
+                        Name :
+                      </span>
                       <span className="">
                         {loginUser.firstName} {loginUser.lastName}
                       </span>
                     </div>
                     <div className="dp_row profile-item">
-                      <span className="font-bold">Email :</span>
+                      <span className="font-bold profileSubHeading">
+                        Email :
+                      </span>
                       <span className="">{loginUser.email}</span>
                     </div>
                   </div>

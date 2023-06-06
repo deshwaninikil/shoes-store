@@ -69,9 +69,6 @@
   padding: 1rem;
 }
 
-.address-item {
-}
-
 .address-item h4 {
   margin-bottom: 0.5rem;
 }
@@ -94,6 +91,10 @@
   margin-bottom: 1rem;
   cursor: pointer;
   width: 11rem;
+}
+
+.profileSubHeading {
+  min-width: fit-content;
 }
 
 @media only screen and (max-width: 1000px) {

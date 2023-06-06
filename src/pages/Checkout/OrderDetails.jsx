@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import { useAuth } from "../../context/AuthContext";
 import { OrderContext } from "../../context/OrderContext";
+import { toast } from "react-toastify";
 
 import {
   totalPrice,
@@ -44,11 +45,13 @@ export const OrderDetails = ({ selectedAddress }) => {
     );
 
     if (!res) {
+      // toast.alert("Razorpay SDK failed to load, check your connection");
       alert("Razorpay SDK failed to load, check your connection");
       return;
     }
     if (!selectedAddress) {
-      alert("Please select an address before placing the order.");
+      toast.warning("Please select an address");
+      // alert("Please select an address before placing the order.");
       return;
     }
     const options = {

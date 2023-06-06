@@ -110,7 +110,10 @@ export const SingleProduct = () => {
                   </div>
                   <div className="detail">
                     <span className="deatil-name">Category: </span>
-                    <span>{currentProduct.category}</span>
+                    <span>
+                      {currentProduct.categoryName.charAt(0).toUpperCase() +
+                        currentProduct.categoryName.slice(1)}
+                    </span>
                   </div>
                 </div>
               </div>

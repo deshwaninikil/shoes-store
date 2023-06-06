@@ -23,6 +23,7 @@ export const SearchBar = () => {
       }, delay);
     };
   };
+
   return (
     <>
       <div className="nav_search">

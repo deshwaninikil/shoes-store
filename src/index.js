@@ -15,15 +15,15 @@ makeServer();
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <AuthProvider>
-        <OrderProvider>
-          <ProductProvider>
+      <ProductProvider>
+        <AuthProvider>
+          <OrderProvider>
             <AddressProvider>
               <App />
             </AddressProvider>
-          </ProductProvider>
-        </OrderProvider>
-      </AuthProvider>
+          </OrderProvider>
+        </AuthProvider>
+      </ProductProvider>
     </Router>
   </React.StrictMode>
 );

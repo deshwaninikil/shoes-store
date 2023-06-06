@@ -102,6 +102,9 @@ export const productReducer = (productState, action) => {
         loading: payload,
       };
 
+    case ACTION_TYPE.LOG_OUT:
+      return { ...productState, cart: [], wishlist: [] };
+
     default:
       return productState;
   }

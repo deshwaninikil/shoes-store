@@ -40,7 +40,7 @@ export const Checkout = () => {
               </div>
               {defaultAddress && defaultAddress.length > 0 ? (
                 defaultAddress.map((address, index) => (
-                  <label className="dp_row address-label">
+                  <label className="dp_row address-label" key={address.id}>
                     <input
                       type="radio"
                       name="address"

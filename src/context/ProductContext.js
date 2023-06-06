@@ -61,6 +61,7 @@ export const ProductProvider = ({ children }) => {
     productReducer,
     productInitialState
   );
+
   return (
     <ProductContext.Provider value={{ productState, productDispatch }}>
       {children}

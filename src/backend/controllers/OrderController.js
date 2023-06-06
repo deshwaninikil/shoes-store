@@ -44,16 +44,22 @@ export const addOrdersHandler = function (schema, request) {
         }
       );
     }
+    console.log("schema.users: ", schema.users);
     const userOrders = schema.users.findBy({ _id: userId }).orders;
+    console.log("userOrders: ", userOrders);
     const { order } = JSON.parse(request.requestBody);
+    console.log("order: ", order);
     userOrders.push({
       ...order,
       createdAt: formatDate(),
       updatedAt: formatDate(),
       _id: uuid(),
     });
+    console.log("After push");
     this.db.users.update({ _id: userId }, { order: userOrders });
+    console.log("db 2");
     this.db.users.update({ _id: userId }, { cart: [] });
+    console.log("db 2");
     return new Response(201, {}, { order: userOrders });
   } catch (error) {
     return new Response(

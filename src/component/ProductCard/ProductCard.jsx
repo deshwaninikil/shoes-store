@@ -75,9 +75,9 @@ export const ProductCard = ({ product }) => {
           </div>
         </div>
         {inCart ? (
-          <Link className="btn" to="/cart">
+          <button className="btn" onClick={() => navigate("/cart")}>
             Go to Cart
-          </Link>
+          </button>
         ) : (
           <button
             className="btn primary-btn-solid"

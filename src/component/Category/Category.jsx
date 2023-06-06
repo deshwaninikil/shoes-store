@@ -20,14 +20,22 @@ export const Category = () => {
       console.log("Error in fetching categories", error);
     }
   };
+
   useEffect(() => {
     fetchCategory();
   }, []);
 
   const showByCategory = (categoryName) => {
     productDispatch({
+      type: ACTION_TYPE.CLEAR_ALL,
+    });
+    productDispatch({
       type: ACTION_TYPE.CATEGORY_CHANGE,
       payload: { [categoryName]: true },
+    });
+    productDispatch({
+      type: ACTION_TYPE.SEARCH,
+      payload: "", // Clear search text
     });
     navigate("/product");
   };

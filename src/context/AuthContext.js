@@ -1,6 +1,8 @@
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginService, singupService } from "../services/";
+import { ACTION_TYPE } from "../utils/constants";
+import { ProductContext } from "./ProductContext";
 
 const AuthContext = createContext();
 
@@ -11,6 +13,8 @@ export const AuthProvider = ({ children }) => {
   const [loginUser, setLoginUser] = useState(loginDetails?.loginUser);
   const [authError, setAuthError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const { productDispatch } = useContext(ProductContext);
 
   const loginHandler = async (email, password) => {
     setLoading(true);
@@ -44,9 +48,9 @@ export const AuthProvider = ({ children }) => {
   const logoutHandler = () => {
     setLoading(true);
     localStorage.removeItem("loginDetails");
-    setToken("");
-    setLoginUser("");
-
+    setToken(null);
+    setLoginUser(null);
+    productDispatch({ type: ACTION_TYPE.LOG_OUT });
     setTimeout(() => {
       navigate("/");
       setLoading(false);

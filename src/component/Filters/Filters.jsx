@@ -9,6 +9,7 @@ import { ACTION_TYPE } from "../../utils/constants";
 
 export const Filters = () => {
   const { productDispatch } = useContext(ProductContext);
+
   return (
     <div className="filter-section">
       <div className="filter-block">

@@ -62,6 +62,6 @@ export const removeFromWishlist = async (
 export const clearWishlist = (wishlist, token) => {
   wishlist.map((product) => {
     const productId = product._id;
-    removeItemFromWishlistService({ productId, token });
+    return removeItemFromWishlistService({ productId, token });
   });
 };

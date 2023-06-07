@@ -58,3 +58,10 @@ export const removeFromWishlist = async (
     console.error(error);
   }
 };
+
+export const clearWishlist = (wishlist, token) => {
+  wishlist.map((product) => {
+    const productId = product._id;
+    removeItemFromWishlistService({ productId, token });
+  });
+};

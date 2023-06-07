@@ -48,7 +48,7 @@ export const removeFromCart = async (
       type: REMOVE_FROM_CART,
       payload: cart,
     });
-    if (type !== "MOVE_TO_WISHLIST") toast.warning("Deleted from Cart!");
+    // if (type !== "MOVE_TO_WISHLIST") toast.warning("Deleted from Cart!");
   } catch (error) {
     console.error(error);
   }
@@ -80,7 +80,7 @@ export const moveToCart = (product, productDispatch, token) => {
 
 export const clearCart = (cart, productDispatch, token) => {
   cart.map((product) =>
-    removeFromCart(product.productId, productDispatch, token, true)
+    removeFromCart(product._id, productDispatch, token, true)
   );
 };
 
@@ -104,11 +104,6 @@ export const removeFromCartAfterOrderPlaced = async (
 
 export const clearCartAfterOrderPlaced = (cart, productDispatch, token) => {
   cart.map((product) =>
-    removeFromCartAfterOrderPlaced(
-      product.productId,
-      productDispatch,
-      token,
-      false
-    )
+    removeFromCartAfterOrderPlaced(product.productId, productDispatch, token)
   );
 };

@@ -7,7 +7,12 @@ export {
   removeFromCartAfterOrderPlaced,
   clearCartAfterOrderPlaced,
 } from "./cart";
-export { addToWishlist, moveToWishlist, removeFromWishlist } from "./wishlist";
+export {
+  addToWishlist,
+  moveToWishlist,
+  removeFromWishlist,
+  clearWishlist,
+} from "./wishlist";
 export {
   totalPrice,
   totalDiscount,
